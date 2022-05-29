@@ -163,7 +163,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1 {
@@ -198,7 +198,6 @@ input, select, textarea {
 	h2, h3, h4, h5, h6 {
 		font-weight: 900;
 		line-height: 1.5;
-		margin: 0 0 2em 0;
 		text-transform: uppercase;
 		letter-spacing: 0.35em;
 	}
@@ -209,22 +208,27 @@ input, select, textarea {
 
 	h2 {
 		font-size: 1.1em;
+		margin: 1em 0 1em 0;
 	}
 
 	h3 {
 		font-size: 1em;
+		margin: 0 0 2em 0;
 	}
 
 	h4 {
 		font-size: 0.8em;
+		margin: 0 0 2em 0;
 	}
 
 	h5 {
 		font-size: 0.8em;
+		margin: 0 0 2em 0;
 	}
 
 	h6 {
 		font-size: 0.8em;
+		margin: 0 0 2em 0;
 	}
 
 	@media screen and (max-width: 980px) {
@@ -2323,7 +2327,7 @@ input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 50%;
 		}
 
 			.image.left img, .image.right img {
@@ -2344,7 +2348,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
+			margin: 0 0 1em 0;
 			width: 100%;
 		}
 
@@ -2354,7 +2358,7 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 0 0 3em 0;
+			margin: 0 0 1em 0;
 			width: 100%;
 		}
 
@@ -2583,7 +2587,7 @@ input, select, textarea {
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;
 			width: calc(33.33333% - 2.5em);
-			margin: 2.5em 0 0 2.5em;
+			margin: 0em 0 2.5em 2.5em;
 		}
 
 			.tiles article > .image {
