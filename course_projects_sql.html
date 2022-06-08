@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Course Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Imron's Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="olist_dept_store_and_saas_company.html">Olist Dept Store & SaaS Company Projects</a></li>
+						<li><a href="course_projects_spreadsheet_and_statistics.html">Spreadheet and Statistics Course Projects</a></li>
+						<li><a href="course_projects_sql.html">SQL Course Projects</a></li>
+						<li><a href="course_projects_tableau.html">Tableau Course Projects</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<h1>SQL Course Projects</h1>
+							
+								<p>
+									This project is the application of skills that have been learned in a course. 
+									We were given datasets and instructions to follow. And here are the results:
+								</p>
+								
+								<h2 style="margin-top: 2em;">Intermediate projects</h2>
+								<span class="image main"><img src="images/skill_sets_intermediate_sql_assignment.PNG" alt="" style="width: 50%;"/></span>
+								
+								<p><b>Dataset overview:</b></p>
+
+								<p style="margin-bottom: 0em;">For Task 1 - 6:  <a href="https://console.cloud.google.com/marketplace/product/san-francisco-public-data/sf-bike-share" target="_blank">San Francisco Ford GoBike Share</a></p> 
+								<p>
+									San Francisco Ford GoBike, managed by Motivate, provides the Bay Area’s bike share system. 
+									Bike share is a convenient, healthy, affordable, and fun form of transportation. 
+									It involves a fleet of specially designed bikes that are locked into a network of docking stations. 
+									Bikes can be unlocked from one station and returned to any other station in the system. 
+									People use bike share to commute to work or school, run errands, get to appointments, and more. 
+									The dataset contains trip data from 2013-2018, including start time, end time, start station, end station, 
+									and latitude/longitude for each station.
+								</p>
+
+								<p><b>SQL code:</b></p>
+								<p><p style="margin-bottom: 0em;">For Task 1 - 5:  <a href="https://console.cloud.google.com/bigquery?sq=966972131473:d9531c927f3b43b6955a2dbe81691aee" target="_blank">see the code here</a>.</p>
+								</p>
+
+								<p><b>Task:</b></p>
+								<p>
+									<ol>
+										<li style="margin-bottom:0.5em">
+											Create a query to get the average amount of duration (in minutes) per month. Please use the start date from 2014 - 2017.
+											<br>Expected output: month, average (in minute)
+											<br>Code:
+											
+<pre class="hljs" style="margin-bottom: 0em; display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+	DATE_TRUNC(<span class="hljs-built_in" style="color: rgb(255, 255, 170);">date</span>(start_date), <span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">months</span>,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ROUND</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">AVG</span>(duration_sec/<span class="hljs-number" style="color: rgb(211, 99, 99);">60</span>), <span class="hljs-number" style="color: rgb(211, 99, 99);">2</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> avg_duration_in_minutes
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span>
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BETWEEN</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">months</span>
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">months</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>;</pre>
+
+											Result: (Top 5 data)
+											<br><span class="image main"><img src="images/sql_task1.PNG" alt="" style="width: 30%;"/></span>
+										</li>
+
+										<li style="margin-bottom:0.5em">
+											Create a query to get total trips and total number of unique bikes grouped by region name. Please used the start date from 2014 - 2017.
+											<br>Expected output: region name, total trips, total bikes
+											<br>Code:
+<pre class="hljs" style="margin-bottom: 0em; display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+	br.name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> region_name,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(bt.trip_id) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> total_trips,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">DISTINCT</span> bt.bike_number) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> total_bikes
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span> bt
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_station_info`</span> si
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> bt.start_station_id = si.station_id
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_regions`</span> br
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> si.region_id = br.region_id
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> bt.start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BETWEEN</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span>
+	region_name
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span>
+	region_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>;</pre>
+											
+											Result:
+											<br><span class="image main"><img src="images/sql_task2.PNG" alt="" style="width: 30%;"/></span>
+										</li>
+
+										<li>
+											Find the youngest and oldest age of the members, for each gender. Assume this year is 2022.
+											<br>Expected output: gender, youngest age, oldest age
+											<br>Code:
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">WITH member_gender_age AS (
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+		member_gender,
+		<span class="hljs-number" style="color: rgb(211, 99, 99);">2022</span>-member_birth_year <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> age
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> member_birth_year <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span>)
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+	member_gender, 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MIN</span>(age) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> youngest_age, 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MAX</span>(age) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> oldest_age
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> member_gender_age
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> member_gender;</pre>
+											Result:
+											<br><span class="image main"><img src="images/sql_task3.PNG" alt="" style="width: 30%;"/></span>
+										</li>
+
+										<li>
+											Get the latest departure trip in each region with detail below
+											<br>Expected output: trip_id, duration_sec, start_date, start_station_name, member_gender, region_name
+											<br>Code:
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">WITH bikeshare_data AS(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>  
+		bt.trip_id <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> trip_id,
+		bt.start_date <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> start_date,
+		bt.start_station_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> start_station_name,
+		bt.duration_sec <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> duration_sec,
+		bt.member_gender <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> member_gender,
+		si.station_id <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> station_id,
+		br.name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> region_name,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">DENSE_RANK</span>() <span class="hljs-keyword" style="color: rgb(252, 194, 140);">OVER</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">PARTITION</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> br.name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> start_date <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`rank`</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span> bt
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_station_info`</span> si
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> bt.start_station_id = si.station_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_regions`</span> br
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> si.region_id = br.region_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> bt.start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BETWEEN</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">rank</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>)
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+	region_name,
+	trip_id,
+	start_date,
+	start_station_name,
+	duration_sec,
+	member_gender
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> bikeshare_data
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> region_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`rank`</span> = <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>;</pre>
+											Result:
+											<br><span class="image main"><img src="images/sql_task4.PNG" alt="" style="width: 70%;"/></span>
+										</li>
+
+										<li>
+											Create a query to get month to date of total trips in each region, breakdown by date. Please use timeframe from November 2017 until December 2017
+											<br>Expected output: start date (in date format), region name, total trips (in cumulative)
+											<br>Code:
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">WITH obs AS(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		<span class="hljs-built_in" style="color: rgb(255, 255, 170);">DATE</span>(bt.start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> start_date,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">DAY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">day</span>,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> region_name,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(bt.trip_id) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> total_trips,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span> bt
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_station_info`</span> si
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> bt.start_station_id = si.station_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_regions`</span> br
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> si.region_id = br.region_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> 
+		br.name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span>
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IN</span> (<span class="hljs-number" style="color: rgb(211, 99, 99);">11</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">12</span>) 
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) = <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span>
+		region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">day</span>, start_date
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span>
+		region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">day</span>, start_date)
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+	start_date, 
+	region_name,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SUM</span>(total_trips) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">OVER</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">PARTITION</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">day</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>) <span class="hljs-string" style="color: rgb(162, 252, 162);">`total_trips_cum`</span>
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> obs
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span>
+	region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">day</span>, start_date;</pre>
+											Result: (Top 5 data)
+											<br><span class="image main"><img src="images/sql_task5.PNG" alt="" style="width: 30%;"/></span>
+										</li>
+									</ol>
+								</p>
+	
+								<h2 style="margin-top: 2em;">Advance projects</h2>
+								<span class="image main"><img src="images/skill_sets_advance_sql_assignment.PNG" alt="" style="width: 50%;"/></span>
+	
+								<p><b>Dataset overview:</b></p>
+
+								<p style="margin-bottom: 0em;">For Task 7:  <a href="https://console.cloud.google.com/marketplace/product/y-combinator/hacker-news" target="_blank">Hacker News</a>.</p>
+								<p>
+									This dataset contains all stories and comments from Hacker News from its launch in 2006 to present. 
+									Each story contains a story ID, the author that made the post, when it was written, and the number of points the story received.
+								</p>
+
+								<p><b>SQL code:</b></p>
+								<p><p style="margin-bottom: 0em;">For Task 6 & 7:  <a href="https://console.cloud.google.com/bigquery?sq=966972131473:7389824115bd4bdf851a7cff80cf5ae6" target="_blank">see the code here</a>.</p>
+								</p>
+
+								<p><b>Task:</b></p>
+								<ol>
+									<li value="6">
+										Find monthly growth of trips in percentage, ordered by time descendingly. Only for trips from the region that has the highest total number of trips.
+										Please use the start date from 2014 - 2017.
+										<br>Expected output: month, region, growth (%)
+										<br>Code:
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">WITH all_data AS(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> br.region_id <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> region_id, br.name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> region_name, bt.trip_id <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> trip_id, bt.start_date <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> star_date, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>,<span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, FORMAT_DATE(<span class="hljs-string" style="color: rgb(162, 252, 162);">"%Y-%m"</span>, <span class="hljs-built_in" style="color: rgb(255, 255, 170);">DATE</span>(start_date)) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> month_formatted
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`</span> bt
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_station_info`</span> si
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> bt.start_station_id = si.station_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.san_francisco_bikeshare.bikeshare_regions`</span> br
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> si.region_id = br.region_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> start_date) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BETWEEN</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+	),
+	number_of_trip_per_region <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> region_id, region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(trip_id) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> total_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> all_data
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_id, region_name
+	),
+	region_rank <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> region_id, region_name, total_trips,<span class="hljs-keyword" style="color: rgb(252, 194, 140);">DENSE_RANK</span>() <span class="hljs-keyword" style="color: rgb(252, 194, 140);">OVER</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> total_trips <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`rank`</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> number_of_trip_per_region
+	),
+	highest_trip_region <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> region_id, region_name
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> region_rank
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`rank`</span> = <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>
+	),
+	total_trip_by_year_month_region <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>,
+		month_formatted,
+		all_data.region_name,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(trip_id) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> current_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> all_data
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">INNER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> highest_trip_region
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> all_data.region_id = highest_trip_region.region_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> all_data.region_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> all_data.region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> all_data.region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted
+	),
+	current_prev_trips_2014_2015_2016 <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		*,
+		LAG(current_trips) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">OVER</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> month_formatted <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> prev_trips,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> total_trip_by_year_month_region
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> region_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IN</span>(<span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2015</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2016</span>)
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted, current_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>
+	),
+	current_prev_trips_2017 <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		*,
+		LAG(current_trips) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">OVER</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">PARTITION</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ASC</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> prev_trips,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> total_trip_by_year_month_region
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> region_name <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> = <span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted, current_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>
+	),
+	growth_2014_2015_2016 <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		month_formatted, region_name, current_trips, prev_trips, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ROUND</span>(((current_trips-prev_trips)/prev_trips)*<span class="hljs-number" style="color: rgb(211, 99, 99);">100</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> growth
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> current_prev_trips_2014_2015_2016 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted, current_trips, prev_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>
+	),
+	growth_2017 <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		month_formatted, region_name, current_trips, prev_trips, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ROUND</span>(((current_trips-prev_trips)/prev_trips)*<span class="hljs-number" style="color: rgb(211, 99, 99);">100</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2</span>) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> growth
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> current_prev_trips_2017
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span>, month_formatted, current_trips, prev_trips
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> region_name, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">year</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>, <span class="hljs-keyword" style="color: rgb(252, 194, 140);">month</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>
+	)
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> month_formatted, region_name, growth <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> growth_2014_2015_2016 
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">UNION</span> ALL
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> month_formatted, region_name, growth <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> growth_2017
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> month_formatted <span class="hljs-keyword" style="color: rgb(252, 194, 140);">DESC</span>;</pre>	
+										Result: (Top 5 data)
+										<br><span class="image main"><img src="images/sql_task6.PNG" alt="" style="width: 30%;"/></span>
+									</li>
+
+									<li>
+										Please use table "stories" to create monthly retention cohorts (the groups, or cohort, can be define based upon the data that a user/author started a story)
+										and then how many of them (%) coming back for the following months in 2014. After analysing the retention cohort, is there any interesting insight that we can get?
+										(Notes: initial start date can be defined using first story start date from each author in table stories)
+										<br>Expected output: first post month, active post month, number of users
+										<br>Code:
+<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">WITH cohort_items AS(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+		<span class="hljs-string" style="color: rgb(162, 252, 162);">`by`</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> user_id,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MIN</span>(<span class="hljs-built_in" style="color: rgb(255, 255, 170);">DATE</span>(DATE_TRUNC(time_ts,<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span>))) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> cohort_month,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.hacker_news.stories`</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>
+),
+user_activities <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+		act.<span class="hljs-string" style="color: rgb(162, 252, 162);">`by`</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> user_id,
+		DATE_DIFF(
+			<span class="hljs-built_in" style="color: rgb(255, 255, 170);">DATE</span>(DATE_TRUNC(time_ts,<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span>)),
+			cohort.cohort_month,
+			<span class="hljs-keyword" style="color: rgb(252, 194, 140);">MONTH</span>
+		) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> month_number,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> <span class="hljs-string" style="color: rgb(162, 252, 162);">`bigquery-public-data.hacker_news.stories`</span> act
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> cohort_items cohort <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> act.<span class="hljs-string" style="color: rgb(162, 252, 162);">`by`</span> = cohort.user_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span>(<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> cohort.cohort_month) = <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AND</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">EXTRACT</span> (<span class="hljs-keyword" style="color: rgb(252, 194, 140);">YEAR</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> act.time_ts) = <span class="hljs-number" style="color: rgb(211, 99, 99);">2014</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2</span>
+),
+cohort_size <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+		cohort_month,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(*) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> num_users
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> cohort_items 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>
+),
+retention_table <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span>(
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span> 
+		c.cohort_month,
+		a.month_number,
+		<span class="hljs-keyword" style="color: rgb(252, 194, 140);">COUNT</span>(*) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> num_users
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> user_activities a 
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> cohort_items c <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> a.user_id = c.user_id
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">GROUP</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">2</span> 
+)
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">SELECT</span>
+	FORMAT_DATE(<span class="hljs-string" style="color: rgb(162, 252, 162);">"%Y-%m"</span>, <span class="hljs-built_in" style="color: rgb(255, 255, 170);">DATE</span>(b.cohort_month)) <span class="hljs-keyword" style="color: rgb(252, 194, 140);">as</span> cohort_month,
+	s.num_users <span class="hljs-keyword" style="color: rgb(252, 194, 140);">as</span> total_users,
+	b.month_number,
+	b.num_users <span class="hljs-keyword" style="color: rgb(252, 194, 140);">as</span> active_users_in_a_month,
+	<span class="hljs-keyword" style="color: rgb(252, 194, 140);">CAST</span>(b.num_users <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> <span class="hljs-built_in" style="color: rgb(255, 255, 170);">decimal</span>)/s.num_users <span class="hljs-keyword" style="color: rgb(252, 194, 140);">AS</span> percentage
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">FROM</span> retention_table b
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">LEFT</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">JOIN</span> cohort_size  s <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ON</span> b.cohort_month = s.cohort_month
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">WHERE</span> b.cohort_month <span class="hljs-keyword" style="color: rgb(252, 194, 140);">IS</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">NOT</span> <span class="hljs-literal" style="color: rgb(252, 194, 140);">NULL</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">ORDER</span> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">BY</span> <span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">3</span>;</pre>
+										Result: (Top 5 data)
+										<br><span class="image main"><img src="images/sql_task7.PNG" alt="" style="width: 50%;"/></span>
+										Result: (Cohort)
+										<br><span class="image main"><img src="images/sql_task7_cohort.PNG" alt="" style="width: 80%;"/></span>
+										In the cohort table, we can see that around 85.5% of users have not posted again in the second month.
+										And from 14.5% of users who are still posting in the second month, only 10.4% are still posting in the third month or there is a 4.1% decrease in users posting in the third month.
+										The decline in the first two months was the largest compared to the decrease in users who were still actively posting in the following months.
+										To find out the causes and how to increase the percentage of user retention, we need to do a deeper analysis.
+									</li>
+								</ol>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>Skills</h2>
+							<p>
+								<b>Tools:</b> Spreadsheet, CleverTap, Google Analytics, Metabase, BigQuery, Google Colaboratory, Tableau, Google Data Studio
+								<br><b>Programming Language:</b> SQL, Python (Library: NumPy, Pandas, Matplotlib, Seaborn)
+								<br><b>Others:</b> Data cleaning, exploratory data analysis (EDA), statistics and probabilistic, regression and correlation, A/B testing, cohort analysis, clustering, RFM, data visualization
+							</p>	
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="http://www.linkedin.com/in/adharul-imron" target="_blank" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/i-adharul" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://api.whatsapp.com/send/?phone=6281232983610&text&app_absent=0" target="_blank" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								<li><a href="mailto: i.adharul@gmail.com" target="_blank" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
