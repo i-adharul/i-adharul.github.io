@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Spreadsheet and Statistics Course Projects</title>
+		<title>Olist business condition & customer segmentation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -36,56 +36,37 @@
 					</header>
 
 				<!-- Menu -->
-				<nav id="menu">
-					<h2>Menu</h2>
-					<ul>
-						<li><a href="index.html">Home</a></li>
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="ecommerceu_kpi_dashboard.html">EcommerceU KPI Dashboard and Revenue Drop Diagnisis</a></li>
 							<li><a href="ecommerceu_kpi_dashboard.html">Marketing Strategy Based On Customer Segmentation</a></li>
 							<li><a href="olist_root_cause_analysis.html">Root Causes Analysis of Olist Stagnant Revenue Growth</a></li>
 							<li><a href="course_projects_sql.html">SQL Course Projects</a></li>
 							<li><a href="course_projects_tableau_and_gds.html">Tableau and GDS Course Projects</a></li>
-							<li><a href="bbca_stock_price.html">BBCA Stock Price</a></li>
-					</ul>
-				</nav>
+							<li><a href="course_projects_spreadsheet_and_statistics.html">Spreadsheet and Statistics Course Projects</a></li>
+						</ul>
+					</nav>
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Spreadheet and Statistics Course Projects</h1>
-
-							<p>This project is the application of skills that have been learned in a course. 
-								We were given datasets and instructions to follow. And here are the results:
-								<br>(Note: All the result is in a g-sheet file. You can see the context and summary in the 'overview' sheet)
-							</p>
+							<h1>BBCA Stock Price</h1>
+							<span class="image main" style="border: 1px solid gray;"><img  src="images/bbca_stock_price.PNG" alt="" /></span>
 							
-							<h2 style="margin-top: 2em;">Intermediate projects</h2>
-							<span class="image main"><img src="images/skill_sets_intermediate_spreadsheet_assignment.PNG" alt="" style="width: 50%;"/></span>
-							
-							<p><b>Case 1:</b> Property Listings Price in Kuala Lumpur
-								<br> See the result <a href="https://docs.google.com/spreadsheets/d/1VM6XBegsD40FYLZh3h82iicHHvy0cjoR6HNsaGBL1Cc/edit?usp=sharing" target="_blank">here</a>.
-							</p>
+							<p>This project uses data from Google Finance which is generated in Google Sheets. Here is the code I use.</p>
 
-							<p><b>Case 2:</b> E-commere Public Dataset
-								<br> See the result <a href="https://docs.google.com/spreadsheets/d/1rB1gm8gpL8myE4GQtxAEnHF_ZuhYDF0lCp1b1ZZ4a2o/edit?usp=sharing" target="_blank">here</a>.
-							</p>
+<p>
+	<pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);">=GOOGLEFINANCE(<span class="hljs-string" style="color: rgb(162, 252, 162);">"IDX:BBCA"</span>, <span class="hljs-string" style="color: rgb(162, 252, 162);">"all"</span>, DATE(<span class="hljs-number" style="color: rgb(211, 99, 99);">2017</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>,<span class="hljs-number" style="color: rgb(211, 99, 99);">1</span>), TODAY(), <span class="hljs-string" style="color: rgb(162, 252, 162);">"DAILY"</span>)</pre>
+</p>
 
-							<p></p>
+							<p>In the chart displayed with candlesticks, you can see the movement of BBCA's stock price per day, 
+								starting from the open price, close price, highest price, lowest price, and candle status (up or down). 
+								You can also customize the appearance by setting date filters and date levels.</p>
 
-							<h2 style="margin-top: 2em;">Advance projects</h2>
-							<span class="image main"><img src="images/skill_sets_advance_spreadsheet_assignment.PNG" alt="" style="width: 50%;"/></span>
-
-							<p><b>Case 3:</b> E-commere Public Dataset (Part 2)
-								<br> See the result <a href="https://docs.google.com/spreadsheets/d/1zBCuiGiQ7FstNOPF6wZKDvuhTbFBfLIpiiQ5r9DxCUM/edit?usp=sharing" target="_blank">here</a>.
-							</p>
-
-							<p><b>Case 4:</b> A/B Test Result Dataset (Hypothesis Testing)
-								<br> See the result <a href="https://docs.google.com/spreadsheets/d/1baVJIJG4oejgEHlXdoMZH9huKbx5mVQ4AbJwA-Kr4TQ/edit?usp=sharing" target="_blank">here</a>.
-								<br> Context:
-								<br> Given the experiment results from the control and experimental group, we have a hypothesis that the new page (treatment group) will give a better convertion rate.
-								<br> 1) Test whether the hypothesis is proven or not using z-test.
-								<br> 2) Determine whether the test reject or fail to reject the hypothesis.
-							</p>
+							<p>To view and use graphic filters, visit my public table <a href="https://public.tableau.com/app/profile/adharul.imron/viz/BBCAStockPrice/Candlestick" target="_blank">here</a>.</p> 
+						</p>
 						</div>
 					</div>
 
