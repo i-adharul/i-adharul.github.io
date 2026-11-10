@@ -1,0 +1,62 @@
+---
+import Base from './Base.astro';
+import Chip from '../components/Chip.astro';
+import Icon from '../components/Icon.astro';
+import TldrBlock from '../components/TldrBlock.astro';
+import Toc from '../components/Toc.astro';
+import NextCase from '../components/NextCase.astro';
+import { allProjects } from '../data/home';
+
+interface Props {
+  data: {
+    title: string; headline: string; description: string; kind: 'flagship' | 'course'; order: number;
+    chips: string[]; tldr: { stats: { value: string; label: string }[]; bottomLine?: string };
+    links: { label: string; href: string }[];
+  };
+  slug: string;
+  headings: { depth: number; slug: string; text: string }[];
+}
+const { data, slug, headings } = Astro.props;
+const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
+const i = allProjects.findIndex((p) => p.href === `/${slug}.html`);
+const next = allProjects[(i + 1) % allProjects.length];
+const eyebrow = data.kind === 'flagship' ? `Case study ${String(data.order).padStart(2, '0')}` : 'Course project';
+---
+<Base title={`${data.title} — Adharul Imron`} description={data.description} type="article">
+  <article class="case-study">
+    <header class={`${wrap} pt-8 md:pt-12`}>
+      <a href="/#work" class="inline-flex items-center gap-1.5 t-body-sm text-muted hover:text-accent">
+        <Icon name="arrow-right" class="h-4 w-4 rotate-180" /> Work
+      </a>
+      <p class="mt-8 t-caption font-semibold uppercase tracking-wider text-accent">{eyebrow}</p>
+      <h1 class="t-headline-lg mt-3 max-w-3xl">{data.headline}</h1>
+      <p class="t-body-lg mt-4 max-w-3xl text-muted">{data.title}</p>
+      {data.chips.length > 0 && <ul class="mt-5 flex flex-wrap gap-2">{data.chips.map((c) => <li><Chip>{c}</Chip></li>)}</ul>}
+      {data.links.length > 0 && (
+        <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+          {data.links.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 t-body-sm font-semibold text-accent hover:underline">
+              {l.label} <Icon name="arrow-up-right" class="h-4 w-4" /></a></li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    <div class={`${wrap} mt-10`}><TldrBlock {...data.tldr} /></div>
+
+    <div class={`${wrap} mt-10 grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-14`}>
+      <div class="min-w-0">
+        <details class="mb-8 rounded-card border border-line bg-surface lg:hidden">
+          <summary class="cursor-pointer px-4 py-3 t-body-sm font-semibold">On this page</summary>
+          <div class="border-t border-line p-4"><Toc headings={headings} /></div>
+        </details>
+        <div class="prose case-prose max-w-none"><slot /></div>
+      </div>
+      <aside class="hidden lg:block" aria-label="Table of contents">
+        <div class="sticky top-20"><Toc headings={headings} /></div>
+      </aside>
+    </div>
+
+    <div class={`${wrap} pb-20`}><NextCase href={next.href} title={next.title} summary={next.summary} /></div>
+  </article>
+</Base>

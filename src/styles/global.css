@@ -82,3 +82,35 @@
 @utility t-body-sm { font-size: 0.875rem; line-height: 1.5; }
 @utility t-caption { font-size: 0.75rem; line-height: 1.4; font-weight: 500; letter-spacing: 0.02em; }
 @utility t-metric { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; @media (min-width: 48rem) { font-size: 2.5rem; line-height: 1; letter-spacing: -0.03em; } }
+
+/* ---------- Case-study prose (typography plugin, themed via tokens) ---------- */
+.prose {
+  --tw-prose-body: var(--ink);
+  --tw-prose-headings: var(--ink);
+  --tw-prose-bold: var(--ink);
+  --tw-prose-links: var(--accent);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--line);
+  --tw-prose-captions: var(--muted);
+  --tw-prose-code: var(--ink);
+}
+.case-prose { counter-reset: sec; }
+.case-prose :where(p, ul, ol, h2, h3, h4):not(.not-prose *) { max-width: var(--container-prose); } /* ~70ch reading width */
+.case-prose h2 {
+  margin-top: 4rem; margin-bottom: 1rem; scroll-margin-top: 5rem;
+  font-size: 1.5rem; line-height: 1.3; font-weight: 600; letter-spacing: -0.02em;
+}
+.case-prose h2::before {
+  counter-increment: sec; content: counter(sec, decimal-leading-zero) '.\00a0';
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.case-prose h2:first-child { margin-top: 0; }
+.case-prose h3 { scroll-margin-top: 5rem; }
+.case-prose a { font-weight: 500; text-underline-offset: 3px; }
+.case-prose a[target='_blank']::after { content: ' ↗'; }
+/* Auto-numbered figure captions */
+.case-study { counter-reset: fig; }
+.case-study figcaption::before {
+  counter-increment: fig; content: 'Figure ' counter(fig) '. '; font-weight: 600; color: var(--ink);
+}

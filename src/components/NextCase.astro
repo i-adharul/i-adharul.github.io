@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+interface Props { href: string; title: string; summary: string }
+const { href, title, summary } = Astro.props;
+---
+<aside aria-labelledby="next-title" class="group relative rounded-card border border-line bg-surface p-6 transition hover:border-line-strong md:p-8">
+  <p id="next-title" class="t-caption font-semibold uppercase tracking-wider text-muted">Next case study</p>
+  <div class="mt-2 flex items-start justify-between gap-6">
+    <div>
+      <h2 class="t-headline-md"><a href={href} class="after:absolute after:inset-0 after:content-['']">{title}</a></h2>
+      <p class="mt-2 max-w-prose t-body-sm text-muted">{summary}</p>
+    </div>
+    <Icon name="arrow-right" class="mt-1 h-6 w-6 shrink-0 text-accent transition-transform group-hover:translate-x-1" />
+  </div>
+</aside>

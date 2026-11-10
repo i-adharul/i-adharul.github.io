@@ -6,7 +6,6 @@ import thumbDashboard from '../assets/images/thumb-dashboard.png';
 import thumbEda from '../assets/images/thumb-eda.jpg';
 import thumbSql from '../assets/images/thumb-sql.png';
 import thumbTableau from '../assets/images/thumb-tableau.png';
-import thumbSpreadsheet from '../assets/images/thumb-spreadsheet.jpg';
 import thumbBbca from '../assets/images/thumb-bbca.png';
 
 export const hero = {
@@ -101,9 +100,7 @@ export const courseWork: CourseItem[] = [
     href: '/spreadsheet_assignment.html',
     title: 'RevoU - Spreadsheet and Statistics Assignment',
     summary: 'This assignment is the application of the skills learned in Spreadsheet and Statistics class. We were given a data set and instructions to follow.',
-    image: thumbSpreadsheet,
-    // TODO(owner): this is a stock A/B-test illustration, not your own work. Replace with a real screenshot?
-    alt: 'Illustration of an A/B test: version A (control) next to version B (variation)',
+    typeCard: { label: 'RevoU', text: 'Spreadsheet & Statistics' }, // typographic card (owner decision)
   },
   {
     href: '/bbca.html',
@@ -118,3 +115,6 @@ export const contact = {
   heading: 'Get in touch',
   text: 'If you have any question, want to ask business enquiries or want to collaborate, please do not hesitate to contact me.',
 };
+
+// Canonical project order (used for "Next case study"). Migrated to the content collection in Phase 4.
+export const allProjects = [...selectedWork, ...courseWork];
