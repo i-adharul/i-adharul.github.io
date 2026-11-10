@@ -1,0 +1,16 @@
+---
+interface Props { stats: { value: string; label: string }[]; bottomLine?: string }
+const { stats, bottomLine } = Astro.props;
+---
+<section aria-labelledby="tldr-title" class="rounded-card border border-line bg-surface p-5 md:p-8">
+  <h2 id="tldr-title" class="t-caption font-semibold uppercase tracking-wider text-accent">TL;DR / Impact</h2>
+  <dl class="mt-5 grid gap-6 sm:grid-cols-3">
+    {stats.map((s) => (
+      <div class="border-l-2 border-accent pl-4">
+        <dt class="t-metric">{s.value}</dt>
+        <dd class="mt-2 t-body-sm text-muted">{s.label}</dd>
+      </div>
+    ))}
+  </dl>
+  {bottomLine && <p class="mt-6 border-t border-line pt-5 font-medium">{bottomLine}</p>}
+</section>

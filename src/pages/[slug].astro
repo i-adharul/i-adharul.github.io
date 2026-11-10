@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import CaseStudy from '../layouts/CaseStudy.astro';
+import Figure from '../components/mdx/Figure.astro';
+import Insight from '../components/mdx/Insight.astro';
+import DataTable from '../components/mdx/DataTable.astro';
+import DevOnly from '../components/DevOnly.astro';
+
+// One page per entry: /<id>.html (build.format: 'file') — same filenames as the legacy site.
+export async function getStaticPaths() {
+  const entries = await getCollection('caseStudies');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+<CaseStudy data={entry.data} slug={entry.id} headings={headings}>
+  <Content components={{ Figure, Insight, DataTable, DevOnly }} />
+</CaseStudy>

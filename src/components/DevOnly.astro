@@ -1,0 +1,6 @@
+---
+// Renders its content only in `astro dev`. Production builds (`astro build`) omit it entirely,
+// so editorial TODO notes never ship.
+const show = import.meta.env.DEV;
+---
+{show && <slot />}

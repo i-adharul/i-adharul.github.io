@@ -1,0 +1,86 @@
+---
+title: Tableau and Google Data Studio Assignment
+cardTitle: RevoU - Tableau and Google Data Studio Assignment
+description: "RevoU Tableau and Google Data Studio assignment: an e-commerce dashboard and a Singapore Airbnb listings analysis with insights."
+summary: "This assignment is the application of the skills that have been learned in the Data Visualization class. We were given a data set and instructions to follow. These assignments require Tableau and Google Data Studio skills from basic to advanced levels such as creating a hierarchy, calculated field, and interactive map."
+kind: course
+tier: more
+order: 6
+chips: [Tableau, Google Data Studio]
+thumb: ../../assets/images/thumb-tableau.png
+thumbAlt: "Tableau dashboard titled Singapore AirBnB Listings with a treemap by region and area, bar charts by room type and price range, and a map"
+---
+import skillsIntermediate from '../../assets/images/tableau/skills-intermediate.png';
+import skillsAdvanced from '../../assets/images/tableau/skills-advanced.png';
+import ecommerce from '../../assets/images/tableau/ecommerce-dashboard.png';
+import airbnbTableau from '../../assets/images/tableau/airbnb-tableau-public.png';
+import airbnbGds from '../../assets/images/tableau/airbnb-data-studio.png';
+
+
+This project is the application of skills that have been learned in a course. We were given datasets and instructions to follow. And here are the results:
+
+## Intermediate projects
+
+<Figure
+  src={skillsIntermediate}
+  alt="Table of skill sets and skills: Tableau Basic, Tableau Data Preparation, Tableau Calculation, Tableau Dashboard"
+/>
+
+**Dataset:** [E-commerce](https://docs.google.com/spreadsheets/d/1xb8apeG9UB_wNg_YH5g14CQv_pBax8cXgc23lxfaXKQ/edit?usp=sharing)
+
+The dataset used is data from an e-commerce which consists of order dataset, customer dataset, payment dataset, order item dataset, product dataset, and product category dataset.
+
+**Instructions:**
+
+1. Connect and combine/join the above datasets to Tableau.
+2. Create visualization of the following:
+   - Number of orders per month
+   - Number of orders per product category
+   - Top 5 highest states based on number of customers
+   - Number of customer per hierarchy state and city (using hierarchical field)
+   - Number of orders per price group (using calculated field)
+3. Combine into one interactive dashboard:
+   - The interactive dashboard must include flexible period and other filters, such as Customer state, Order status, Payment type, etc.
+
+**Dashboard:** (Click [here to view on Tableau Public](https://public.tableau.com/app/profile/adharul.imron/viz/intermediateassignment/Dashboard1#1).)
+
+<Figure
+  src={ecommerce}
+  alt="Tableau dashboard titled E-commerce Performance with filters, number of orders per month, number of orders per price range, top 5 states by number of customers, a state-and-city hierarchy table and number of orders per product category"
+/>
+
+## Advanced projects
+
+<Figure
+  src={skillsAdvanced}
+  alt="Table of skill sets and skills: Exploratory Data Analysis, Tableau Calculation, Tableau Dashboard, Google Data Studio"
+/>
+
+**Dataset:** [AirBnB Listings Singapore Dataset](https://docs.google.com/spreadsheets/d/1Bs2vhINMfyPbPMvaZCj2AVA-vjcX7orMlUbCfAIYgQ0/edit?usp=sharing)
+
+**Instructions:**
+
+1. Do EDA using Tableau and Google Data Studio by combining different variables to find the pattern.
+2. Create interactive visualization in a map based on location listings.
+3. Highlight interesting insight that you get
+
+**Dashboard:** (Click [here to view on Tableau Public](https://public.tableau.com/app/profile/adharul.imron/viz/RevoUAdvanceAssignment-SingaporeAirBnBListings/Dashboard1).)
+
+<Figure
+  src={airbnbTableau}
+  alt="Tableau dashboard titled Singapore AirBnB Listings with a treemap of listings per region and area, bar charts by region, room type, price range and host, a map of listings, and filters"
+/>
+
+**Dashboard:** (Click [here to view on Google Data Studio](https://datastudio.google.com/reporting/89bbae04-38ac-468f-bc45-cc8e16afb8c8).)
+
+<Figure
+  src={airbnbGds}
+  alt="Google Data Studio report of Singapore Airbnb listings with a treemap by region, bar charts by region, room type, price range and host, a map of listings, and filters"
+/>
+
+**Insight:**
+
+1. 80% of Singapore's Airbnb listings are in the central region.
+2. 9 of the top 10 areas with the most AirBnB listings are in the Central Region, only the Bedok area (East Region) is not in the Central Region.
+3. Private rooms and entire homes/apartments are the most common room types on the list. With a listing rental price in the form of an entire home/apartment which is on average more expensive than the price of a private room.
+4. From all listings, 709 hosts have 1 property/room in the list and another 532 hosts have more than 1 property/room in the list. If AirBnB wants to increase the number of properties/rooms in its listing, then one way to do it is to try to invite hosts who have just registered one property to register other properties with Airbnb as well.

@@ -82,3 +82,40 @@
 @utility t-body-sm { font-size: 0.875rem; line-height: 1.5; }
 @utility t-caption { font-size: 0.75rem; line-height: 1.4; font-weight: 500; letter-spacing: 0.02em; }
 @utility t-metric { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; @media (min-width: 48rem) { font-size: 2.5rem; line-height: 1; letter-spacing: -0.03em; } }
+
+/* ---------- Case-study prose (typography plugin, themed via tokens) ---------- */
+.prose {
+  --tw-prose-body: var(--ink);
+  --tw-prose-headings: var(--ink);
+  --tw-prose-bold: var(--ink);
+  --tw-prose-links: var(--accent);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--line);
+  --tw-prose-captions: var(--muted);
+  --tw-prose-code: var(--ink);
+}
+.case-prose :where(p, ul, ol, h2, h3, h4):not(.not-prose *) { max-width: var(--container-prose); } /* ~70ch reading width */
+.case-prose h2 {
+  margin-top: 4rem; margin-bottom: 1rem; scroll-margin-top: 5rem;
+  font-size: 1.5rem; line-height: 1.3; font-weight: 600; letter-spacing: -0.02em;
+}
+.case-prose h2:first-child { margin-top: 0; }
+.case-prose h3 { scroll-margin-top: 5rem; }
+.case-prose a { font-weight: 500; text-underline-offset: 3px; }
+.case-prose a[target='_blank']::after { content: ' ↗' / ''; }
+
+/* Code blocks (Shiki output): framed, scrollable, system monospace */
+.case-prose pre {
+  max-width: 100%; margin: 1rem 0 1.5rem; overflow-x: auto; border: 1px solid var(--line); border-radius: 0.5rem;
+  padding: 1rem; font-size: 0.8125rem; line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+.case-prose pre code { font-family: inherit; font-size: inherit; }
+.case-prose pre:focus-visible { outline-offset: 2px; }
+
+/* Reduced motion: no smooth scroll, no hover movement, no animated transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .group:hover { transform: none !important; translate: none !important; }
+}

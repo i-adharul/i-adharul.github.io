@@ -6,9 +6,10 @@ import Footer from '../components/Footer.astro';
 import { SITE } from '../site';
 
 interface Props { title: string; description?: string; image?: string; type?: 'website' | 'article' }
-const { title, description = SITE.description, image, type = 'website' } = Astro.props;
+const { title, description = SITE.description, image = '/og.png', type = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), SITE.url).href;
-const ogImage = image ? new URL(image, SITE.url).href : undefined;
+const ogImage = new URL(image, SITE.url).href;
+const ogAlt = `${SITE.name} — ${SITE.title}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -26,11 +27,15 @@ const ogImage = image ? new URL(image, SITE.url).href : undefined;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
     <!-- Apply theme before first paint (no flash). -->
     <script is:inline>
       (function () {

@@ -1,0 +1,29 @@
+---
+title: BBCA Stock Price Candle Stick
+description: "BBCA stock price candlestick chart built from Google Finance data in Google Sheets and published on Tableau Public."
+summary: "This project uses data from Google Finance which is generated in Google Sheets. And this is how I make it a candle stick chart."
+kind: course
+tier: more
+order: 8
+chips: [Google Finance, Google Sheets]
+thumb: ../../assets/images/thumb-bbca.png
+thumbAlt: "Candlestick chart of the BBCA stock price by day, with up days in green and down days in red"
+---
+import chart from '../../assets/images/bbca/bbca-stock-price.png';
+
+
+<Figure
+  priority
+  src={chart}
+  alt="Candlestick chart of the BBCA stock price by day, with up days in green and down days in red, and date level and date selector filters"
+/>
+
+This project uses data from Google Finance which is generated in Google Sheets. Here is the code I use.
+
+```text
+=GOOGLEFINANCE("IDX:BBCA", "all", DATE(2017,1,1), TODAY(), "DAILY")
+```
+
+In the chart displayed with candlesticks, you can see the movement of BBCA's stock price per day, starting from the open price, close price, highest price, lowest price, and candle status (up or down). You can also customize the appearance by setting date filters and date levels.
+
+To view and use graphic filters, visit [my public table here](https://public.tableau.com/app/profile/adharul.imron/viz/BBCAStockPrice/Candlestick).
