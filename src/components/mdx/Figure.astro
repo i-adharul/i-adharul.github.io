@@ -2,23 +2,27 @@
 import { Image } from 'astro:assets';
 import FigureCard from '../FigureCard.astro';
 // Chart/screenshot figure. `pending` (no src) shows the "chart pending" state.
-interface Props { src?: ImageMetadata; alt?: string; caption?: string; pending?: boolean }
-const { src, alt = '', caption, pending = false } = Astro.props;
+// `priority` = above the fold: load eagerly with high fetch priority.
+interface Props { src?: ImageMetadata; alt?: string; caption?: string; pending?: boolean; priority?: boolean }
+const { src, alt = '', caption, pending = false, priority = false } = Astro.props;
 // White mat around the image keeps light-background screenshots from glaring in dark mode.
 const small = !!src && src.width < 900; // don't upscale small screenshots
 const isPending = pending || !src;
 // Production: a figure without a real image is omitted (no placeholder, no caption).
 // Dev: the "chart pending" card is shown so missing charts stay visible while editing.
 const render = !isPending || import.meta.env.DEV;
+const loading = priority ? 'eager' : 'lazy';
+const fetchpriority = priority ? 'high' : undefined;
 ---
 {render && <div class="not-prose">
   <FigureCard caption={caption} pending={pending || !src}>
     {src && (
-      <div class="mx-auto w-fit max-w-full overflow-hidden rounded-md bg-white">
+      <div class:list={['mx-auto overflow-hidden rounded-md bg-white', small ? 'w-fit max-w-full' : 'w-full']}>
+        {/* Large images: full-width box + width/height attributes reserve the space before the image loads (no layout shift). */}
         {small
-          ? <Image src={src} alt={alt} format="webp" class="h-auto max-w-full" loading="lazy" decoding="async" />
+          ? <Image src={src} alt={alt} format="webp" class="h-auto max-w-full" loading={loading} fetchpriority={fetchpriority} decoding="async" />
           : <Image src={src} alt={alt} widths={[640, 1100, 1500]} sizes="(min-width: 1024px) 720px, calc(100vw - 4rem)"
-              format="webp" class="h-auto w-full" loading="lazy" decoding="async" />}
+              format="webp" class="h-auto w-full" loading={loading} fetchpriority={fetchpriority} decoding="async" />}
       </div>
     )}
   </FigureCard>

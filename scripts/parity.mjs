@@ -38,6 +38,11 @@ const UI_NEW = new Set([
   'cluster', 'category', 'price range', 'attributes',                     // DataTable column headers
   'task 1', 'task 2', 'task 3', 'task 4', 'task 5', 'task 6', 'task 7',    // SQL per-task section headings (TOC)
 ]);
+// Legacy headings with no text under them. Hidden in PRODUCTION only (owner decision); dev still shows them with a TODO note.
+const LEGACY_ONLY_BY_PAGE = {
+  ecommerceu_eda: new Set(['recommendations']),
+  ecommerceu_feature_adoption: new Set(['application flow changes']),
+};
 // Legacy-only strings intentionally not carried over.
 const LEGACY_ONLY = new Set([
   'projects',            // home section title replaced by "Selected Work" / "Course work & more" (owner's brief)
@@ -97,6 +102,7 @@ const allLegacy = PAGES.map((p) => base(decode(read(`legacy/${p}.html`)))).join(
 for (const [label, re] of FIXES) say(`  - ${label}: ${(allLegacy.match(re) || []).length}`);
 say(`UI allowlist (new-only): ${[...UI_NEW].join(' | ')}`);
 say(`Legacy-only allowlist: ${[...LEGACY_ONLY].join(' | ')}`);
+say(`Per-page legacy-only (empty headings hidden in production): ${Object.entries(LEGACY_ONLY_BY_PAGE).map(([p, v]) => `${p}: ${[...v].join(', ')}`).join(' | ')}`);
 say('');
 
 const chipWords = new Set(); // words of valid home chips are not "new words"
@@ -112,11 +118,11 @@ for (const page of PAGES) {
   const chipOk = page === "index" ? homeChips() : new Set();
   if (page === "index") chipOk.forEach((c) => c.split(" ").forEach((w) => chipWords.add(w)));
   const onlyNew = N.filter((s, i) => Nw[i] && !UI_NEW.has(Nw[i]) && !chipOk.has(Nw[i]) && !Lfull.includes(` ${Nw[i]} `));
-  const onlyLegacy = L.filter((s, i) => Lw[i] && !LEGACY_ONLY.has(Lw[i]) && !Nfull.includes(` ${Lw[i]} `));
+  const onlyLegacy = L.filter((s, i) => Lw[i] && !LEGACY_ONLY.has(Lw[i]) && !(LEGACY_ONLY_BY_PAGE[page] || new Set()).has(Lw[i]) && !Nfull.includes(` ${Lw[i]} `));
   const order = []; let cursor = 0;
   const cardStart = page === 'index' ? Lw.indexOf('projects') : -1, cardEnd = page === 'index' ? Lw.indexOf('get in touch') : -1;
   L.forEach((s, i) => {
-    const w = Lw[i]; if (!w || LEGACY_ONLY.has(w)) return;
+    const w = Lw[i]; if (!w || LEGACY_ONLY.has(w) || (LEGACY_ONLY_BY_PAGE[page] || new Set()).has(w)) return;
     if (cardStart >= 0 && i > cardStart && i < cardEnd) return; // cards re-tiered by owner (Selected Work / Course work & more)
     const at = Nfull.indexOf(` ${w} `, cursor);
     if (at >= 0) cursor = at + 1;
