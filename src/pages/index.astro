@@ -7,7 +7,11 @@ import ProjectCard from '../components/ProjectCard.astro';
 import SkillGroup from '../components/SkillGroup.astro';
 import CourseRow from '../components/CourseRow.astro';
 import { SITE } from '../site';
-import { hero, selectedWork, skills, courseWork, contact } from '../data/home';
+import { hero, skills, contact } from '../data/home';
+import { getProjects } from '../lib/projects';
+const projects = await getProjects();
+const selectedWork = projects.filter((p) => p.tier === 'selected');
+const courseWork = projects.filter((p) => p.tier === 'more');
 const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
 ---
 <Base title="Adharul Imron — Data Analyst" description={`${hero.subtitle}. SQL, Python, BigQuery, Tableau and Metabase case studies.`}>

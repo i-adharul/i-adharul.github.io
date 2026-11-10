@@ -1,0 +1,47 @@
+---
+title: BBCA Stock Price Candle Stick
+# TODO(owner): this page states no findings. Headline derived by the assistant from the page's description. Rewrite in your voice.
+headline: "BBCA's daily stock price as a candlestick chart, built from Google Finance data in Google Sheets and published on Tableau Public"
+headlineDerived: true
+# TODO(owner): meta description condensed from existing copy; no new facts.
+description: "BBCA stock price candlestick chart built from Google Finance data in Google Sheets and published on Tableau Public."
+summary: "This project uses data from Google Finance which is generated in Google Sheets. And this is how I make it a candle stick chart."
+kind: course
+tier: more
+order: 8
+chips: [Google Sheets, Tableau]
+thumb: ../../assets/images/thumb-bbca.png
+thumbAlt: "Candlestick chart of BBCA daily stock price from July 2021 to July 2022, with up days in green and down days in red"
+# TODO(owner): TL;DR chosen by the assistant from the page's text.
+tldr:
+  stats:
+    - value: "IDX:BBCA"
+      label: "stock tracked, with data from Google Finance generated in Google Sheets"
+    - value: "Daily"
+      label: "candles showing open price, close price, highest price, lowest price, and candle status (up or down)"
+    - value: "Filters"
+      label: "date filters and date levels, available on Tableau Public"
+links:
+  - label: "Chart on Tableau Public"
+    href: "https://public.tableau.com/app/profile/adharul.imron/viz/BBCAStockPrice/Candlestick"
+---
+import chart from '../../assets/images/bbca/bbca-stock-price.png';
+
+{/* TODO(owner): caption and alt text drafted from the image; review in Phase 5. */}
+{/* TODO(owner): original text said "visit my public table here" (Tableau Public was meant). Fixed to "my Tableau Public". */}
+
+<Figure
+  src={chart}
+  alt="Candlestick chart of BBCA daily stock price from July 2021 to July 2022, with up days in green and down days in red, plus date level and date selector filters"
+  caption="BBCA daily stock price candlestick chart (Tableau Public)."
+/>
+
+This project uses data from Google Finance which is generated in Google Sheets. Here is the code I use.
+
+```text
+=GOOGLEFINANCE("IDX:BBCA", "all", DATE(2017,1,1), TODAY(), "DAILY")
+```
+
+In the chart displayed with candlesticks, you can see the movement of BBCA's stock price per day, starting from the open price, close price, highest price, lowest price, and candle status (up or down). You can also customize the appearance by setting date filters and date levels.
+
+To view and use graphic filters, visit my Tableau Public [here](https://public.tableau.com/app/profile/adharul.imron/viz/BBCAStockPrice/Candlestick).

@@ -114,3 +114,12 @@
 .case-study figcaption::before {
   counter-increment: fig; content: 'Figure ' counter(fig) '. '; font-weight: 600; color: var(--ink);
 }
+
+/* Code blocks (Shiki output): framed, scrollable, system monospace */
+.case-prose pre {
+  max-width: 100%; margin: 1rem 0 1.5rem; overflow-x: auto; border: 1px solid var(--line); border-radius: 0.5rem;
+  padding: 1rem; font-size: 0.8125rem; line-height: 1.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+.case-prose pre code { font-family: inherit; font-size: inherit; }
+.case-prose pre:focus-visible { outline-offset: 2px; }

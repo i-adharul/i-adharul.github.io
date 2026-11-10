@@ -7,8 +7,13 @@ headlineDerived: true
 description: "Customer segmentation (RFM, K-means) for E-commerceU: four customer segments and recommendations for segmented marketing strategies."
 summary: "Currently the marketing strategy used by E-commerceU Company does not target a specific market or different approaches for different market segments. Therefore, E-commerceU requires recommendation support for the development of segmented marketing strategies using Customer Segmentation Analysis."
 kind: flagship
+tier: selected
 order: 1
 chips: [Python, RFM, K-means]
+# TODO(owner): "finding" line chosen by the assistant (verbatim sentence from this page).
+finding: "75% of the products purchased by high revenue customers are electronics and hobbies categories."
+thumb: ../../assets/images/thumb-segmentation.png
+thumbAlt: "Stacked bar charts comparing the number of users, transactions and revenue across customer clusters, with a table of average revenue per buyer"
 # TODO(owner): TL;DR figures/lines were selected by the assistant; every number appears verbatim in the text below.
 tldr:
   stats:
@@ -169,12 +174,12 @@ The distribution of all clusters in each province and the use of the payment met
 
 <DataTable
   caption="Main characteristics of each cluster"
-  columns={["Cluster", "Main categories", "Price ranges", "Monetary value", "Recency (median)", "Frequency (median)"]}
+  columns={["Cluster", "Category", "Price range", "The main attributes"]}
   rows={[
-    ["Churning Low Revenue Customer", "Clothing & Groceries", "Mid to low", "Low (mean: 804k)", "165 days", "1 trx"],
-    ["High Revenue Customer", "Electronics & Hobbies", "Higher to mid", "High (mean: 804k)", "40 days", "6 trx"],
-    ["Low Revenue Customer", "Clothing & Groceries", "Mid to low", "Low (mean: 946k)", "30 days", "2 trx"],
-    ["Churned Customer", "Clothing & Groceries", "Mid to low", "None", "552 days", "None"],
+    ["Churning Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "low monetary value (mean: 804k), haven't transacted recently (median: 165 days), low frequency (median: 1 trx)"],
+    ["High Revenue Customer", "Mostly dabble on Electronics & Hobbies category", "Mostly buy on higher to mid price ranges", "high monetary value (mean: 804k), transacted recently (median: 40 days), high frequency (median: 6 trx)"],
+    ["Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "low monetary value (mean: 946k), transacted recently (median: 30 days), low frequency (median: 2 trx)"],
+    ["Churned Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "no monetary value, haven't transacted for long time (median: 552 days), no frequency"],
   ]}
   note="*Province wise, they are all spread evenly across the 5 province"
 />

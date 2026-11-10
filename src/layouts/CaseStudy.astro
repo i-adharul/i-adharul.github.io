@@ -5,12 +5,12 @@ import Icon from '../components/Icon.astro';
 import TldrBlock from '../components/TldrBlock.astro';
 import Toc from '../components/Toc.astro';
 import NextCase from '../components/NextCase.astro';
-import { allProjects } from '../data/home';
+import { getProjects } from '../lib/projects';
 
 interface Props {
   data: {
-    title: string; headline: string; description: string; kind: 'flagship' | 'course'; order: number;
-    chips: string[]; tldr: { stats: { value: string; label: string }[]; bottomLine?: string };
+    title: string; cardTitle?: string; headline: string; description: string; kind: 'flagship' | 'course'; order: number;
+    chips: string[]; tocDepth: 2 | 3; tldr: { stats: { value: string; label: string }[]; bottomLine?: string };
     links: { label: string; href: string }[];
   };
   slug: string;
@@ -18,11 +18,14 @@ interface Props {
 }
 const { data, slug, headings } = Astro.props;
 const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
-const i = allProjects.findIndex((p) => p.href === `/${slug}.html`);
-const next = allProjects[(i + 1) % allProjects.length];
+const projects = await getProjects();
+const i = projects.findIndex((p) => p.slug === slug);
+const next = projects[(i + 1) % projects.length];
 const eyebrow = data.kind === 'flagship' ? `Case study ${String(data.order).padStart(2, '0')}` : 'Course project';
+const hasToc = headings.filter((h) => h.depth === 2).length >= 2;
 ---
-<Base title={`${data.title} — Adharul Imron`} description={data.description} type="article">
+<!-- <title> = the original project title (no suffix). -->
+<Base title={data.title} description={data.description} type="article">
   <article class="case-study">
     <header class={`${wrap} pt-8 md:pt-12`}>
       <a href="/#work" class="inline-flex items-center gap-1.5 t-body-sm text-muted hover:text-accent">
@@ -30,7 +33,7 @@ const eyebrow = data.kind === 'flagship' ? `Case study ${String(data.order).padS
       </a>
       <p class="mt-8 t-caption font-semibold uppercase tracking-wider text-accent">{eyebrow}</p>
       <h1 class="t-headline-lg mt-3 max-w-3xl">{data.headline}</h1>
-      <p class="t-body-lg mt-4 max-w-3xl text-muted">{data.title}</p>
+      <p class="t-body-lg mt-4 max-w-3xl text-muted">{data.cardTitle ?? data.title}</p>
       {data.chips.length > 0 && <ul class="mt-5 flex flex-wrap gap-2">{data.chips.map((c) => <li><Chip>{c}</Chip></li>)}</ul>}
       {data.links.length > 0 && (
         <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2">
@@ -44,17 +47,21 @@ const eyebrow = data.kind === 'flagship' ? `Case study ${String(data.order).padS
 
     <div class={`${wrap} mt-10`}><TldrBlock {...data.tldr} /></div>
 
-    <div class={`${wrap} mt-10 grid gap-10 pb-16 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-14`}>
+    <div class:list={[wrap, 'mt-10 grid gap-10 pb-16', hasToc && 'lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-14']}>
       <div class="min-w-0">
-        <details class="mb-8 rounded-card border border-line bg-surface lg:hidden">
-          <summary class="cursor-pointer px-4 py-3 t-body-sm font-semibold">On this page</summary>
-          <div class="border-t border-line p-4"><Toc headings={headings} /></div>
-        </details>
+        {hasToc && (
+          <details class="mb-8 rounded-card border border-line bg-surface lg:hidden">
+            <summary class="cursor-pointer px-4 py-3 t-body-sm font-semibold">On this page</summary>
+            <div class="border-t border-line p-4"><Toc headings={headings} depth={data.tocDepth} /></div>
+          </details>
+        )}
         <div class="prose case-prose max-w-none"><slot /></div>
       </div>
-      <aside class="hidden lg:block" aria-label="Table of contents">
-        <div class="sticky top-20"><Toc headings={headings} /></div>
-      </aside>
+      {hasToc && (
+        <aside class="hidden lg:block" aria-label="Table of contents">
+          <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto"><Toc headings={headings} depth={data.tocDepth} /></div>
+        </aside>
+      )}
     </div>
 
     <div class={`${wrap} pb-20`}><NextCase href={next.href} title={next.title} summary={next.summary} /></div>
