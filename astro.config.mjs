@@ -10,6 +10,17 @@ export default defineConfig({
   // Keeps legacy URLs: src/pages/foo.astro -> /foo.html
   build: { format: 'file' },
   trailingSlash: 'never',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      // build.format:'file' emits /foo.html; make the sitemap match each page's canonical URL.
+      serialize(item) {
+        const u = new URL(item.url);
+        if (u.pathname !== '/' && !u.pathname.endsWith('.html')) u.pathname += '.html';
+        item.url = u.href;
+        return item;
+      },
+    }),
+  ],
   vite: { plugins: [tailwindcss()] },
 });

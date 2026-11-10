@@ -6,15 +6,15 @@ import type { Project } from '../lib/projects';
 interface Props { project: Project; index: number; eager?: boolean }
 const { project: p, index, eager = false } = Astro.props;
 ---
-<article class="group relative grid gap-6 rounded-card border border-line bg-surface p-5 transition hover:-translate-y-0.5 hover:border-line-strong md:grid-cols-2 md:gap-8 md:p-8 shadow-[0_1px_3px_0_rgb(15_23_42/0.04),0_1px_2px_-1px_rgb(15_23_42/0.04)]">
+<article class="group relative has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-accent grid gap-6 rounded-card border border-line bg-surface p-5 transition hover:-translate-y-0.5 hover:border-line-strong md:grid-cols-2 md:gap-8 md:p-8 shadow-[0_1px_3px_0_rgb(15_23_42/0.04),0_1px_2px_-1px_rgb(15_23_42/0.04)]">
   <div class="flex flex-col">
     <p class="t-caption uppercase tracking-wider text-accent">Case study {String(index + 1).padStart(2, '0')}</p>
     <h3 class="t-headline-md mt-2">
-      <a href={p.href} class="after:absolute after:inset-0 after:content-[''] focus-visible:outline-offset-4">{p.title}</a>
+      <a href={p.href} class="after:absolute after:inset-0 after:content-['']">{p.title}</a>
     </h3>
     <p class="mt-3 text-muted">{p.summary}</p>
     {p.finding && (
-      <div class="mt-5 rounded-lg border border-line bg-figure p-4">
+      <div class="mt-5 rounded-lg border border-line bg-canvas p-4">
         <p class="t-caption uppercase tracking-wider text-muted">Key finding</p>
         <p class="mt-1 font-semibold tabular">{p.finding}</p>
       </div>

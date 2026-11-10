@@ -6,7 +6,7 @@ const num = String(n).padStart(2, '0');
 ---
 <section id={`insight-${n}`} class="mt-12 scroll-mt-20" aria-labelledby={`insight-${n}-title`}>
   <h3 id={`insight-${n}-title`} class="mt-0 flex items-baseline gap-3 t-headline-sm">
-    <span class="tabular rounded-sm border border-line bg-inset px-2 py-0.5 t-caption uppercase tracking-wider text-accent">Insight {num}</span>
+    <span class="tabular rounded-sm border border-line bg-canvas px-2 py-0.5 t-caption uppercase tracking-wider text-accent">Insight {num}</span>
     <span>{title}</span>
   </h3>
   <div class="mt-3"><slot /></div>

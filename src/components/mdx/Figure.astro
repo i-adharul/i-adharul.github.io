@@ -6,8 +6,12 @@ interface Props { src?: ImageMetadata; alt?: string; caption: string; pending?: 
 const { src, alt = '', caption, pending = false } = Astro.props;
 // White mat around the image keeps light-background screenshots from glaring in dark mode.
 const small = !!src && src.width < 900; // don't upscale small screenshots
+const isPending = pending || !src;
+// Production: a figure without a real image is omitted (no placeholder, no caption).
+// Dev: the "chart pending" card is shown so missing charts stay visible while editing.
+const render = !isPending || import.meta.env.DEV;
 ---
-<div class="not-prose">
+{render && <div class="not-prose">
   <FigureCard caption={caption} pending={pending || !src}>
     {src && (
       <div class="mx-auto w-fit max-w-full overflow-hidden rounded-md bg-white">
@@ -18,4 +22,4 @@ const small = !!src && src.width < 900; // don't upscale small screenshots
       </div>
     )}
   </FigureCard>
-</div>
+</div>}

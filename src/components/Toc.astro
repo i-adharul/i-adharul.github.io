@@ -11,7 +11,7 @@ let n = 0;
       {items.map((h) => (
         <li>
           <a href={`#${h.slug}`} class:list={['-ml-px block border-l border-transparent py-0.5 t-body-sm hover:border-accent hover:text-accent',
-            h.depth === 2 ? 'pl-4 text-muted' : 'pl-8 text-muted/90 text-[0.8125rem]']}>
+            h.depth === 2 ? 'pl-4 text-muted' : 'pl-8 text-muted text-[0.8125rem]']}>
             {h.depth === 2 && <span class="tabular">{String(++n).padStart(2, '0')}. </span>}{h.text}</a>
         </li>
       ))}

@@ -9,7 +9,7 @@ import { getProjects } from '../lib/projects';
 
 interface Props {
   data: {
-    title: string; cardTitle?: string; headline: string; description: string; kind: 'flagship' | 'course'; order: number;
+    title: string; cardTitle?: string; headline: string; headlineDerived?: boolean; description: string; kind: 'flagship' | 'course'; order: number;
     chips: string[]; tocDepth: 2 | 3; tldr: { stats: { value: string; label: string }[]; bottomLine?: string };
     links: { label: string; href: string }[];
   };
@@ -33,6 +33,9 @@ const hasToc = headings.filter((h) => h.depth === 2).length >= 2;
       </a>
       <p class="mt-8 t-caption font-semibold uppercase tracking-wider text-accent">{eyebrow}</p>
       <h1 class="t-headline-lg mt-3 max-w-3xl">{data.headline}</h1>
+      {import.meta.env.DEV && data.headlineDerived && (
+        <p class="mt-2 inline-block rounded-sm border border-line px-2 py-1 t-caption text-muted">dev note: headline and TL;DR were derived from existing copy. Rewrite them in the owner's voice.</p>
+      )}
       <p class="t-body-lg mt-4 max-w-3xl text-muted">{data.cardTitle ?? data.title}</p>
       {data.chips.length > 0 && <ul class="mt-5 flex flex-wrap gap-2">{data.chips.map((c) => <li><Chip>{c}</Chip></li>)}</ul>}
       {data.links.length > 0 && (

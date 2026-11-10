@@ -108,7 +108,7 @@
 .case-prose h2:first-child { margin-top: 0; }
 .case-prose h3 { scroll-margin-top: 5rem; }
 .case-prose a { font-weight: 500; text-underline-offset: 3px; }
-.case-prose a[target='_blank']::after { content: ' ↗'; }
+.case-prose a[target='_blank']::after { content: ' ↗' / ''; }
 /* Auto-numbered figure captions */
 .case-study { counter-reset: fig; }
 .case-study figcaption::before {
@@ -123,3 +123,9 @@
 }
 .case-prose pre code { font-family: inherit; font-size: inherit; }
 .case-prose pre:focus-visible { outline-offset: 2px; }
+
+/* Reduced motion: no smooth scroll, no hover movement, no animated transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .group:hover { transform: none !important; translate: none !important; }
+}
