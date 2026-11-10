@@ -24,7 +24,7 @@
   --line-strong: #cbd5e1;
   --ink: #0f172a;
   --muted: #64748b;
-  --accent: #0f766e; /* TODO(owner): confirm accent (brief said #XXXXXX) */
+  --accent: #0f766e; /* confirmed by owner */
   --accent-hover: #115e59;
   --on-accent: #ffffff;
   color-scheme: light;
