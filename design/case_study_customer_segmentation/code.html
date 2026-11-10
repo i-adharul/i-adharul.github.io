@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Study: E-commerceU Marketing Strategy Based On Customer Segmentation — Elena Vance</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4fdbc8",
+            "primary": "#005c55",
+            "tertiary": "#7f4025",
+            "tertiary-fixed": "#ffdbce",
+            "secondary": "#006b5f",
+            "surface-bright": "#faf8ff",
+            "surface-container": "#eaedff",
+            "on-secondary-fixed-variant": "#005048",
+            "tertiary-fixed-dim": "#ffb598",
+            "primary-fixed": "#9cf2e8",
+            "outline": "#6e7977",
+            "primary-fixed-dim": "#80d5cb",
+            "surface-variant": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#80d5cb",
+            "on-secondary-fixed": "#00201c",
+            "on-background": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#6df5e1",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#71f8e4",
+            "background": "#faf8ff",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "on-tertiary-container": "#ffe5db",
+            "on-tertiary-fixed": "#370e00",
+            "on-primary-fixed-variant": "#00504a",
+            "outline-variant": "#bdc9c6",
+            "inverse-surface": "#283044",
+            "on-secondary-container": "#006f64",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#9c573a",
+            "on-surface": "#131b2e",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#3e4947",
+            "on-tertiary-fixed-variant": "#72361b",
+            "on-primary-container": "#a3faef",
+            "on-primary-fixed": "#00201d",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container-high": "#e2e7ff",
+            "surface-tint": "#006a63",
+            "primary-container": "#0f766e",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-highest": "#dae2fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "1rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "margin-sm": "1rem",
+            "margin-lg": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "metric-stat-mobile": ["Inter"],
+            "headline-sm": ["Inter"],
+            "caption": ["Inter"],
+            "body-lg": ["Inter"],
+            "metric-stat": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "display-mobile": ["Inter"],
+            "display": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "metric-stat-mobile": ["2rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["1.125rem", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "caption": ["0.75rem", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.6", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-stat": ["2.5rem", { "lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-md": ["1rem", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-mobile": ["2.25rem", { "lineHeight": "1.15", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "display": ["3.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/30">
+<div class="max-w-6xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+<a class="text-headline-sm font-headline-sm font-semibold text-on-surface dark:text-inverse-on-surface tracking-tight" href="#">
+        Elena Vance — Senior Data Analyst
+      </a>
+<nav class="flex items-center gap-8">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-primary-fixed font-semibold transition-colors duration-150" href="#">Work</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">Skills</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#">Contact</a>
+</div>
+<button aria-label="Toggle theme" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-150 rounded-lg" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="dark_mode">dark_mode</span>
+</button>
+</nav>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-6 md:px-12 pt-8 pb-24">
+<!-- Breadcrumb -->
+<div class="mb-8">
+<a class="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors duration-150 font-medium" href="#">
+<span class="text-primary">←</span> Work
+      </a>
+</div>
+<!-- Header Section -->
+<header class="mb-12 border-b border-outline-variant/30 pb-10">
+<p class="font-caption text-caption text-primary font-semibold tracking-wider mb-3">
+        Case Study: E-commerceU Marketing Strategy Based On Customer Segmentation
+      </p>
+<h1 class="font-headline-lg text-headline-lg md:font-display md:text-display text-on-surface mb-6 max-w-4xl tracking-tight">
+        Re-clustering 2.4M Customer Lifecycles Uncovered $3.8M in At-Risk High-LTV Accounts
+      </h1>
+<!-- Metadata / Tags -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-high border border-outline-variant/40 rounded-lg text-body-sm font-body-sm text-on-surface-variant">RFM</span>
+<span class="px-2.5 py-1 bg-surface-container-high border border-outline-variant/40 rounded-lg text-body-sm font-body-sm text-on-surface-variant">Clustering</span>
+<span class="px-2.5 py-1 bg-surface-container-high border border-outline-variant/40 rounded-lg text-body-sm font-body-sm text-on-surface-variant">Python</span>
+<span class="px-2.5 py-1 bg-surface-container-high border border-outline-variant/40 rounded-lg text-body-sm font-body-sm text-on-surface-variant">K-Means</span>
+<span class="px-2.5 py-1 bg-surface-container-high border border-outline-variant/40 rounded-lg text-body-sm font-body-sm text-on-surface-variant">Cohort Analytics</span>
+</div>
+</header>
+<!-- TL;DR / Impact block -->
+<section class="mb-16 bg-surface-container-low border border-outline-variant/50 rounded-lg p-6 md:p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold tracking-tight">Executive Summary &amp; Impact</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="border-l-2 border-primary pl-4">
+<p class="font-caption text-caption text-on-surface-variant mb-1 font-semibold">VALIDATION FIDELITY</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Identified 4 distinct behavioral clusters across 2.4M transactions with 94.2% silhouette validation.
+          </p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="font-caption text-caption text-on-surface-variant mb-1 font-semibold">BUDGET ALLOCATION</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Reallocated $420k ad spend away from churn-prone "Discount Seekers" into high-margin "Champions".
+          </p>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<p class="font-caption text-caption text-on-surface-variant mb-1 font-semibold">VELOCITY GAIN</p>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Lifted repeat-purchase velocity by 18.4% in 90 days via tailored lifecycle triggers.
+          </p>
+</div>
+</div>
+</section>
+<!-- Layout Grid: Prose + Table of Contents -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 space-y-16">
+<!-- Section 1: About the project -->
+<section class="scroll-mt-24" id="about">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 pb-2 border-b border-outline-variant/30 flex items-center justify-between">
+<span>01. About the project</span>
+<span class="font-caption text-caption text-outline font-normal">Context &amp; Problem</span>
+</h2>
+<div class="max-w-prose space-y-4 text-on-surface-variant font-body-md text-body-md">
+<p>
+              E-commerceU, an enterprise retail marketplace processing 2.4M transactions annually, was experiencing deteriorating marketing ROI. Despite record user acquisition spends, customer retention had dropped 14% year-over-year. The marketing organization had been treating its customer base as an undifferentiated monolith, blasting blanket quarterly promotional discounts across all accounts.
+            </p>
+<p>
+              The primary objective was to architect an automated behavioral segmentation pipeline from raw order history stored across multiple PostgreSQL replica shards. Using Python and statistical clustering methodologies, this study aims to isolate true value drivers from margin diluters, providing the growth team with distinct targeting strategies.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 max-w-prose">
+<div class="p-3.5 bg-surface-container-low border border-outline-variant/30 rounded-lg">
+<span class="block font-caption text-caption text-outline mb-0.5">Dataset Scale</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">2,418,902 Orders</span>
+</div>
+<div class="p-3.5 bg-surface-container-low border border-outline-variant/30 rounded-lg">
+<span class="block font-caption text-caption text-outline mb-0.5">Storage Layer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">PostgreSQL</span>
+</div>
+<div class="p-3.5 bg-surface-container-low border border-outline-variant/30 rounded-lg col-span-2 md:col-span-1">
+<span class="block font-caption text-caption text-outline mb-0.5">Pipeline</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Python / Polars / Scikit</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Method (RFM) -->
+<section class="scroll-mt-24" id="method">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 pb-2 border-b border-outline-variant/30 flex items-center justify-between">
+<span>02. Method (RFM)</span>
+<span class="font-caption text-caption text-outline font-normal">Feature Engineering</span>
+</h2>
+<div class="max-w-prose space-y-4 text-on-surface-variant font-body-md text-body-md">
+<p>
+              RFM (Recency, Frequency, Monetary) transformation served as the foundation of the feature vector. However, empirical e-commerce data displays extreme positive skewness and long-tail spending profiles. Raw values directly ingested into Euclidean distance-based algorithms produce unstable cluster centroids heavily dominated by solitary wholesale accounts.
+            </p>
+<div class="bg-surface-container-high/60 border-l-2 border-primary p-4 rounded-r-lg">
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Pipeline Normalization Steps:</p>
+<ul class="list-disc list-inside mt-2 space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<li><strong class="text-on-surface">Outlier Truncation:</strong> Winsorized monetary amounts above the 99.8th percentile.</li>
+<li><strong class="text-on-surface">Log Transformation:</strong> Applied log1p transformations across Frequency and Monetary axes to enforce normal distribution symmetry.</li>
+<li><strong class="text-on-surface">StandardScaler Z-Scores:</strong> Zero-centered all axes to unity variance, equalizing distance sensitivities across days vs. currency metrics.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 3: Segmentation Results -->
+<section class="scroll-mt-24" id="results">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 pb-2 border-b border-outline-variant/30 flex items-center justify-between">
+<span>03. Segmentation Results</span>
+<span class="font-caption text-caption text-outline font-normal">Model Diagnostics &amp; Distribution</span>
+</h2>
+<div class="max-w-prose mb-8 text-on-surface-variant font-body-md text-body-md">
+<p>
+              To confirm structural stability before parameter assignment, K-Means was benchmarked across cluster horizons \(k \in [2, 10]\). The combined metric optimization verified a sharp inflection at \(k=4\), corroborated by an average silhouette width of 0.68 and intra-cluster cohesion tests.
+            </p>
+</div>
+<!-- Breakout Figure 1: Elbow & Silhouette -->
+<div class="my-8 border border-outline-variant/40 rounded-lg overflow-hidden bg-surface-container-lowest">
+<div class="p-6 bg-surface-container-low/50 border-b border-outline-variant/30">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+<span class="font-headline-sm text-headline-sm text-on-surface">Cluster Cardinality Convergence</span>
+<span class="font-caption text-caption text-primary bg-primary-fixed/30 border border-primary-fixed px-2 py-0.5 rounded">Optimal K = 4</span>
+</div>
+<!-- Analytical Diagram Mockup -->
+<div class="h-64 w-full flex items-end justify-between gap-4 pt-8 pb-4 px-4 bg-surface-container-lowest rounded border border-outline-variant/20">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-outline-variant/30 rounded-t h-48 transition-all hover:bg-outline-variant"></div>
+<span class="font-caption text-caption text-outline">k=2</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-outline-variant/40 rounded-t h-36 transition-all hover:bg-outline-variant"></div>
+<span class="font-caption text-caption text-outline">k=3</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 relative">
+<span class="absolute -top-6 text-[10px] font-bold text-primary">Elbow Max</span>
+<div class="w-full bg-primary-container rounded-t h-24 shadow-sm"></div>
+<span class="font-caption text-caption font-bold text-primary">k=4</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-outline-variant/40 rounded-t h-16 transition-all hover:bg-outline-variant"></div>
+<span class="font-caption text-caption text-outline">k=5</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-outline-variant/30 rounded-t h-12 transition-all hover:bg-outline-variant"></div>
+<span class="font-caption text-caption text-outline">k=6</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-outline-variant/20 rounded-t h-8 transition-all hover:bg-outline-variant"></div>
+<span class="font-caption text-caption text-outline">k=7</span>
+</div>
+</div>
+</div>
+<!-- Caption Block -->
+<div class="px-6 py-3 bg-surface-container-low text-on-surface-variant flex flex-wrap items-center justify-between text-caption font-caption">
+<span>Figure 1: Optimal K determination via Elbow Method &amp; Silhouette Score (k=4 optimal cluster boundary)</span>
+<span class="text-outline">N = 2,418,902 • Python scikit-learn • Standardized Scaler</span>
+</div>
+</div>
+<!-- Breakout Figure 2: Multi-dimensional cluster plot -->
+<div class="my-8 border border-outline-variant/40 rounded-lg overflow-hidden bg-surface-container-lowest">
+<div class="p-6 bg-surface-container-low/50 border-b border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<span class="font-headline-sm text-headline-sm text-on-surface">Spatial Partitioning: Recency vs. Monetary Vectors</span>
+<div class="flex gap-4 font-caption text-caption">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Champions</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Loyal Advocates</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> At-Risk High Rollers</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-outline"></span> Hibernating</span>
+</div>
+</div>
+<!-- Scatter Canvas Simulation -->
+<div class="h-72 w-full relative bg-surface-container-lowest border border-outline-variant/20 rounded p-6 overflow-hidden">
+<!-- Grid Lines -->
+<div class="absolute inset-0 grid grid-cols-4 grid-rows-4 pointer-events-none opacity-20">
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-r border-outline"></div>
+<div class="border-b border-outline"></div>
+</div>
+<!-- Cluster Blobs simulated mathematically -->
+<!-- Champions (Top Left: low recency days = high freshness, high spend) -->
+<div class="absolute top-8 left-12 w-28 h-28 rounded-full bg-primary/10 border border-primary flex items-center justify-center">
+<span class="font-caption text-caption text-primary font-bold">Cluster 1</span>
+</div>
+<!-- Loyal Advocates (Mid Left: moderate recency, steady frequency) -->
+<div class="absolute top-28 left-40 w-36 h-28 rounded-full bg-secondary/10 border border-secondary flex items-center justify-center">
+<span class="font-caption text-caption text-secondary font-bold">Cluster 2</span>
+</div>
+<!-- At Risk (Top Right: High historic spend, High days since last purchase) -->
+<div class="absolute top-10 right-16 w-32 h-32 rounded-full bg-tertiary/10 border border-tertiary flex items-center justify-center">
+<span class="font-caption text-caption text-tertiary font-bold">Cluster 3 ($3.8M)</span>
+</div>
+<!-- Hibernating (Bottom Right: High recency days, low spend) -->
+<div class="absolute bottom-6 right-24 w-44 h-24 rounded-full bg-outline/10 border border-outline flex items-center justify-center">
+<span class="font-caption text-caption text-outline font-bold">Cluster 4</span>
+</div>
+</div>
+</div>
+<div class="px-6 py-3 bg-surface-container-low text-on-surface-variant flex flex-wrap items-center justify-between text-caption font-caption">
+<span>Figure 2: Multi-dimensional cluster distributions showing Champions, Loyalists, At Risk, and Hibernating groups</span>
+<span class="text-outline">Plotting log(Monetary) against Scaled Recency Rank</span>
+</div>
+</div>
+<!-- Breakout Figure 3: Chart Pending Placeholder -->
+<div class="my-8 border-2 border-dashed border-outline-variant/60 rounded-lg p-12 bg-surface-container-low/40 text-center flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-outline text-3xl mb-2" data-icon="pending">pending</span>
+<p class="font-body-md text-body-md text-on-surface font-medium">
+              Chart coming soon — Dimensionality Reduction (t-SNE / UMAP)
+            </p>
+<p class="font-caption text-caption text-outline mt-1 max-w-sm">
+              Supplementary high-dimensional manifold projection evaluating non-linear cluster separation within seasonal promotional phases.
+            </p>
+</div>
+</section>
+<!-- Section 4: Insights & Recommendations -->
+<section class="scroll-mt-24" id="insights">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 pb-2 border-b border-outline-variant/30 flex items-center justify-between">
+<span>04. Insights and Recommendations</span>
+<span class="font-caption text-caption text-outline font-normal">Actionable Roadmaps</span>
+</h2>
+<div class="space-y-6 max-w-prose">
+<div class="p-4 border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-caption text-caption text-primary font-bold">INSIGHT 01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The $3.8M At-Risk Blindspot</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Over 11,200 historically high-spending accounts had surpassed 120 days of inactivity without receiving tailored outreach. <strong>Recommendation:</strong> Introduce a dedicated concierge reactivation cadence with dynamic personalized inventory reminders instead of generic batch coupons.
+              </p>
+</div>
+<div class="p-4 border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-caption text-caption text-primary font-bold">INSIGHT 02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ad Budget Cannibalization</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Nearly 35% of performance remarketing spend targeted "Hibernating Bargain Hunters" with sub-zero margin returns due to high return rates. <strong>Recommendation:</strong> Immediately pull $420k paid social spend from this cohort and reallocate to nurture flows for "Loyal Advocates".
+              </p>
+</div>
+<div class="p-4 border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-caption text-caption text-primary font-bold">INSIGHT 03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Champion Repurchase Elasticity</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                The top 6% "Champions" generate 41% of platform GMV and exhibit almost zero price sensitivity to site-wide clearance promotions. <strong>Recommendation:</strong> Transition Champions from discount-based incentives to early access drops, VIP community tiers, and exclusive SKU bundling.
+              </p>
+</div>
+<div class="p-4 border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-caption text-caption text-primary font-bold">INSIGHT 04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Velocity Gaps in the Second Order Milestone</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Accounts transitioning between new buyers and Loyal Advocates experienced an average latency of 68 days before purchase #2. <strong>Recommendation:</strong> Trigger automated lifecycle communications at day 21 based on category cross-sell affinities calculated from association rule mining.
+              </p>
+</div>
+<div class="p-4 border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-caption text-caption text-primary font-bold">INSIGHT 05</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Operationalizing Cluster Drift Detection</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Customer behavioral patterns shifted across holiday quarters, causing 12% cluster reassignment over 90 days. <strong>Recommendation:</strong> Schedule automated weekly Airflow DAGs to re-score RFM assignments and synchronize cohorts directly to the Customer Data Platform.
+              </p>
+</div>
+</div>
+</section>
+<!-- Section 5: Cluster characteristics -->
+<section class="scroll-mt-24" id="characteristics">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 pb-2 border-b border-outline-variant/30 flex items-center justify-between">
+<span>05. Cluster characteristics</span>
+<span class="font-caption text-caption text-outline font-normal">Comparative Matrix</span>
+</h2>
+<div class="overflow-x-auto border border-outline-variant/40 rounded-lg bg-surface-container-lowest">
+<table class="w-full text-left border-collapse text-body-sm font-body-sm">
+<thead>
+<tr class="border-b border-outline-variant/40 bg-surface-container-low text-on-surface font-semibold text-caption font-caption tracking-wider">
+<th class="py-3 px-4">Cluster Name</th>
+<th class="py-3 px-4">% of Base</th>
+<th class="py-3 px-4">Avg Recency (Days)</th>
+<th class="py-3 px-4">Frequency (Orders/Yr)</th>
+<th class="py-3 px-4">Avg Order Value (AOV)</th>
+<th class="py-3 px-4">Primary Action Strategy</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">Champions</td>
+<td class="py-3.5 px-4">6.4%</td>
+<td class="py-3.5 px-4">14 d</td>
+<td class="py-3.5 px-4">12.8</td>
+<td class="py-3.5 px-4 font-medium">$214.50</td>
+<td class="py-3.5 px-4 text-on-surface-variant">VIP status, early access, zero discount cannibalization</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-secondary">Loyal Advocates</td>
+<td class="py-3.5 px-4">24.1%</td>
+<td class="py-3.5 px-4">38 d</td>
+<td class="py-3.5 px-4">5.4</td>
+<td class="py-3.5 px-4 font-medium">$132.00</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Category cross-sell, review incentives, loyalty point ladders</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-tertiary">At-Risk High Rollers</td>
+<td class="py-3.5 px-4">11.8%</td>
+<td class="py-3.5 px-4">142 d</td>
+<td class="py-3.5 px-4">6.1</td>
+<td class="py-3.5 px-4 font-medium">$198.80</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Concierge win-back, personalized outreach, product feedback surveys</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-outline">Hibernating Bargain Hunters</td>
+<td class="py-3.5 px-4">57.7%</td>
+<td class="py-3.5 px-4">284 d</td>
+<td class="py-3.5 px-4">1.2</td>
+<td class="py-3.5 px-4 font-medium">$42.20</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Deprioritize paid ads, automate passive seasonal clearance blasts only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Rail (Desktop Only Sticky Mini-TOC) -->
+<aside class="hidden lg:block lg:col-span-4 sticky top-24 self-start pl-6 border-l border-outline-variant/30">
+<span class="block font-caption text-caption text-outline font-semibold tracking-wider mb-4">
+          TABLE OF CONTENTS
+        </span>
+<nav class="space-y-3 font-body-sm text-body-sm">
+<a class="block text-on-surface hover:text-primary transition-colors duration-150 py-1 font-medium border-l-2 border-primary -ml-[25px] pl-[23px]" href="#about">
+            01. About the project
+          </a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#method">
+            02. Method (RFM)
+          </a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#results">
+            03. Segmentation Results
+          </a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#insights">
+            04. Insights &amp; Recommendations
+          </a>
+<a class="block text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#characteristics">
+            05. Cluster Characteristics
+          </a>
+</nav>
+<div class="mt-8 pt-6 border-t border-outline-variant/30">
+<span class="block font-caption text-caption text-outline font-medium mb-2">ANALYST REPOSITORY</span>
+<div class="text-caption font-caption text-on-surface-variant space-y-1">
+<p>Stack: Python 3.11, Polars, scikit-learn</p>
+<p>Published: Q1 2025</p>
+<p>Status: Production Deployed</p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Bottom Section: Next Case Study Card -->
+<div class="mt-20 pt-10 border-t border-outline-variant/30">
+<a class="group block p-8 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-outline-variant transition-all duration-200" href="#">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="font-caption text-caption text-primary font-semibold tracking-wide block mb-1">NEXT CASE STUDY →</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Decoupling Latent Churn in Micro-Billing Cohorts
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-2xl">
+              Applying survival analysis and hazard curves to forecast subscriber churn in low-ticket subscription economics.
+            </p>
+</div>
+<div class="flex items-center text-primary group-hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</a>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-surface dark:bg-surface border-t border-outline-variant/30 dark:border-outline/30">
+<div class="max-w-6xl mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<p class="text-caption font-caption text-on-surface-variant dark:text-outline text-center md:text-left">
+        © 2025 Elena Vance. Designed with analytical rigor &amp; editorial clarity.
+      </p>
+<div class="flex items-center gap-6">
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">Email</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">GitHub</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">LinkedIn</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150" href="#">Kaggle</a>
+</div>
+</div>
+</footer>
+<script>
+    // Smooth scroll spy effect for table of contents
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('aside nav a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - 120)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-on-surface', 'font-medium', 'border-l-2', 'border-primary', '-ml-[25px]', 'pl-[23px]');
+          link.classList.add('text-on-surface-variant');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.remove('text-on-surface-variant');
+            link.classList.add('text-on-surface', 'font-medium', 'border-l-2', 'border-primary', '-ml-[25px]', 'pl-[23px]');
+          }
+        });
+      });
+    });
+  </script>
+</body></html>
