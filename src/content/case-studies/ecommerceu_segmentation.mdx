@@ -1,32 +1,13 @@
 ---
 title: E-commerceU Marketing Strategy Based On Customer Segmentation
-# TODO(owner): headline derived by the assistant from the page's own sentence ("they contribute the largest number of transactions and revenue"). Rewrite in your voice.
-headline: "Double down on high revenue customers: they contribute the largest number of transactions and revenue"
-headlineDerived: true
-# TODO(owner): meta description and card summary are condensed from the "About the project" copy; no new facts.
 description: "Customer segmentation (RFM, K-means) for E-commerceU: four customer segments and recommendations for segmented marketing strategies."
 summary: "Currently the marketing strategy used by E-commerceU Company does not target a specific market or different approaches for different market segments. Therefore, E-commerceU requires recommendation support for the development of segmented marketing strategies using Customer Segmentation Analysis."
 kind: flagship
 tier: selected
 order: 1
 chips: [Python, RFM, K-means]
-# TODO(owner): "finding" line chosen by the assistant (verbatim sentence from this page).
-finding: "75% of the products purchased by high revenue customers are electronics and hobbies categories."
 thumb: ../../assets/images/thumb-segmentation.png
-thumbAlt: "Stacked bar charts comparing the number of users, transactions and revenue across customer clusters, with a table of average revenue per buyer"
-# TODO(owner): TL;DR figures/lines were selected by the assistant; every number appears verbatim in the text below.
-tldr:
-  stats:
-    - value: "4"
-      label: "customer segments, from K-means clustering on RFM"
-    - value: "75%"
-      label: "of the products purchased by high revenue customers are electronics and hobbies categories"
-    - value: "98%"
-      label: "of the contributors for electronic goods and hobbies are high revenue customers"
-  bottomLine: "First priority is to focus on high revenue female customers and electronics-hobbies category to increase revenue."
-links:
-  - label: "Python code (Google Colab)"
-    href: "https://colab.research.google.com/drive/1biTOJ2g0_HKS6-26VwOZ6l5OXCA49Ouf"
+thumbAlt: "Stacked bar charts of the number of users, number of transactions and revenue per customer cluster, with a table of average revenue per buyer, average revenue per transaction and average transactions per buyer"
 ---
 import elbow from '../../assets/images/segmentation/elbow-silhouette.png';
 import clusters3d from '../../assets/images/segmentation/clusters-3d.png';
@@ -36,7 +17,6 @@ import category from '../../assets/images/segmentation/category.png';
 import priceRange from '../../assets/images/segmentation/price-range.png';
 import payment from '../../assets/images/segmentation/payment-province.png';
 
-{/* TODO(owner): all figure captions and alt texts below are drafted from the surrounding copy and the images; review in Phase 5. */}
 
 ## About the project
 
@@ -59,9 +39,9 @@ Why RFM?
 
 Just to give you some context, here are the definitions we use for recency, frequency and monetary.
 
-- **Recency:** Difference between max dataset completed transaction date (today's date replacement) and last user completed transaction date
-- **Frequency:** The number of completed transaction in the period of one year (2021)
-- **Monetary:** The total amount spent of completed transaction in the period of one year (2021)
+- Difference between max dataset completed transaction date (today's date replacement) and last user completed transaction date
+- The number of completed transaction in the period of one year (2021)
+- The total amount spent of completed transaction in the period of one year (2021)
 
 ## Segmentation Results
 
@@ -72,7 +52,6 @@ You can see the [python code here](https://colab.research.google.com/drive/1biTO
 <Figure
   src={elbow}
   alt="Line chart of the elbow method (sum of squared errors by number of clusters) next to a list of average silhouette scores for 2 to 11 clusters, with the rows for 3, 4 and 5 clusters boxed in red"
-  caption="Elbow method and average silhouette score by number of clusters; 3, 4 and 5 clusters are highlighted."
 />
 
 To determine the number of clusters, we first use the elbow and silhouette methods. We found that the best number of clusters is 3, 4, or 5 clusters. And then we will look at the statistical summary and from the business side of each cluster to determine the best number of clusters.
@@ -81,8 +60,7 @@ To determine the number of clusters, we first use the elbow and silhouette metho
 
 <Figure
   src={clusters3d}
-  alt="3D scatter plot of customers by recency, frequency and monetary value in four colour-coded clusters, above a table of summary statistics for each cluster"
-  caption="K-means result with 4 clusters, plotted by recency, frequency and monetary value, with summary statistics per cluster."
+  alt="3D scatter plot of customers by recency, frequency and monetary value, coloured by four clusters, above a table of summary statistics for each cluster"
 />
 
 We divide the segment into 4 clusters using K-means method and statistical summary after doing a series of experiments on the other number of clusters as well, that is:
@@ -106,8 +84,7 @@ And as we know from the data, the number of transactions and revenue from high r
 
 <Figure
   src={attributes}
-  alt="Stacked bar charts of users, transactions and revenue per cluster, plus a table of average revenue per buyer, average revenue per transaction and average transactions per buyer"
-  caption="Users, transactions and revenue per cluster, with average revenue per buyer, average revenue per transaction and average transactions per buyer."
+  alt="Stacked bar charts of the number of users, number of transactions and revenue per cluster, plus a table of average revenue per buyer, average revenue per transaction and average transactions per buyer"
 />
 
 </Insight>
@@ -118,8 +95,7 @@ Mostly dominated by female gender on all across the segmentation, with this info
 
 <Figure
   src={gender}
-  alt="Two 100% stacked bar charts: male versus female share within each cluster, and cluster share among female and male customers; female customers are the majority in every cluster"
-  caption="Gender mix within each cluster, and cluster mix within each gender."
+  alt="Two 100% stacked bar charts: male and female share within each cluster, and cluster share within female and male customers"
 />
 
 </Insight>
@@ -132,8 +108,7 @@ So, to increase revenue we can focus on the category of electronics & hobbies to
 
 <Figure
   src={category}
-  alt="Two heat-map tables: each cluster's share of every product category, and each product category's share of every cluster; electronics and hobbies fall almost entirely in the High Revenue cluster"
-  caption="Cluster mix within each product category, and product-category mix within each cluster."
+  alt="Two heat-map tables: each cluster's share within each product category, and each product category's share within each cluster"
 />
 
 </Insight>
@@ -144,8 +119,7 @@ We can target users in each cluster who are currently in a low price range in th
 
 <Figure
   src={priceRange}
-  alt="Stacked bar chart of the share of transactions in each price range for each cluster; high revenue customers buy in higher price ranges than the other clusters"
-  caption="Share of transactions by price range (IDR) within each cluster."
+  alt="Stacked bar chart of the share of transactions by price range for each cluster"
 />
 
 </Insight>
@@ -157,7 +131,6 @@ The distribution of all clusters in each province and the use of the payment met
 <Figure
   src={payment}
   alt="Two stacked bar charts: cluster share by province (Banten, DKI Jakarta, Jawa Barat, Jawa Tengah, Jawa Timur) and by payment method (credit card, debit card, e-wallet, paylater, transfer)"
-  caption="Cluster mix by province and by payment method."
 />
 
 </Insight>
@@ -168,23 +141,23 @@ The distribution of all clusters in each province and the use of the payment met
 2. Second, formulate product bundling to increase revenue from low revenue customers.
 3. Third, conducting user interviews with high revenue and low revenue customers to find out what makes them churn and what makes them want to keep transacting.
 
-## Main Characteristics of Each Cluster
+## Main Characteristics of Each Clusters
 
 {/* TODO(owner): High Revenue "mean: 804k" is copied verbatim from the old page but looks wrong: the 3D-scatter table in the Figure above shows 10,344,685 for cluster 1 (High Revenue) and 804,764.8 for cluster 0 (Churning Low Revenue). Verify against the notebook. */}
 
 <DataTable
-  caption="Main characteristics of each cluster"
-  columns={["Cluster", "Category", "Price range", "The main attributes"]}
+  label="Main characteristics of each cluster"
+  columns={["Cluster", "Category", "Price range", "Attributes"]}
   rows={[
-    ["Churning Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "low monetary value (mean: 804k), haven't transacted recently (median: 165 days), low frequency (median: 1 trx)"],
-    ["High Revenue Customer", "Mostly dabble on Electronics & Hobbies category", "Mostly buy on higher to mid price ranges", "high monetary value (mean: 804k), transacted recently (median: 40 days), high frequency (median: 6 trx)"],
-    ["Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "low monetary value (mean: 946k), transacted recently (median: 30 days), low frequency (median: 2 trx)"],
-    ["Churned Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "no monetary value, haven't transacted for long time (median: 552 days), no frequency"],
+    ["Churning Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "The main attributes: low monetary value (mean: 804k), haven't transacted recently (median: 165 days), low frequency (median: 1 trx)"],
+    ["High Revenue Customer", "Mostly dabble on Electronics & Hobbies category", "Mostly buy on higher to mid price ranges", "The main attributes: high monetary value (mean: 804k), transacted recently (median: 40 days), high frequency (median: 6 trx)"],
+    ["Low Revenue Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "The main attributes: low monetary value (mean: 946k), transacted recently (median: 30 days), low frequency (median: 2 trx)"],
+    ["Churned Customer", "Mostly buys on Clothing & Groceries category", "Mostly buy on mid to low price ranges", "The main attributes: no monetary value, haven't transacted for long time (median: 552 days), no frequency"],
   ]}
   note="*Province wise, they are all spread evenly across the 5 province"
 />
 
-## Recommendations for Each Cluster
+## Recommendations for Each Clusters
 
 ### High Revenue Customer
 

@@ -1,37 +1,16 @@
 ---
 title: SQL Assignment
+heading: RevoU SQL Assignment
 cardTitle: RevoU - SQL Assignment
-# TODO(owner): headline derived by the assistant from the Task 7 insight on this page. Rewrite in your voice.
-headline: "SQL on BigQuery, from monthly averages to a cohort analysis: around 85.5% of Hacker News users did not post again in the second month"
-headlineDerived: true
-# TODO(owner): meta description condensed from existing copy; no new facts.
 description: "RevoU SQL assignment in BigQuery: San Francisco Ford GoBike Share (Tasks 1-6) and Hacker News retention cohorts (Task 7)."
 summary: "This assignment is the application of the skills learned in SQL class. We were given a data set and instructions to follow. These assignments require SQL skills ranging from basic to advanced levels such as window functions and CTE."
 kind: course
 tier: more
 order: 5
-chips: [SQL, BigQuery, CTE, Window functions]
+chips: [SQL]
 thumb: ../../assets/images/thumb-sql.png
-thumbAlt: "Cohort retention table from the SQL assignment, showing the share of users returning in each month after their first post"
+thumbAlt: "Cohort table of retention percentages by cohort month and month number, shaded from green to red"
 tocDepth: 3
-# TODO(owner): TL;DR stats chosen by the assistant; figures appear verbatim in the text below.
-tldr:
-  stats:
-    - value: "7"
-      label: "tasks: Tasks 1 - 5 intermediate, Tasks 6 and 7 advanced"
-    - value: "2"
-      label: "datasets: San Francisco Ford GoBike Share (Tasks 1 - 6) and Hacker News (Task 7)"
-    - value: "85.5%"
-      label: "of users have not posted again in the second month (Task 7 cohort)"
-links:
-  - label: "San Francisco Ford GoBike Share"
-    href: "https://console.cloud.google.com/marketplace/product/san-francisco-public-data/sf-bike-share"
-  - label: "BigQuery code for Tasks 1 - 5"
-    href: "https://console.cloud.google.com/bigquery?sq=966972131473:d9531c927f3b43b6955a2dbe81691aee"
-  - label: "Hacker News"
-    href: "https://console.cloud.google.com/marketplace/product/y-combinator/hacker-news"
-  - label: "BigQuery code for Tasks 6 & 7"
-    href: "https://console.cloud.google.com/bigquery?sq=966972131473:7389824115bd4bdf851a7cff80cf5ae6"
 ---
 import skillsIntermediate from '../../assets/images/sql/skills-intermediate.png';
 import skillsAdvanced from '../../assets/images/sql/skills-advanced.png';
@@ -44,7 +23,6 @@ import task6 from '../../assets/images/sql/task6.png';
 import task7 from '../../assets/images/sql/task7.png';
 import cohort from '../../assets/images/sql/task7-cohort.png';
 
-{/* TODO(owner): captions and alt texts are drafted from the screenshots; review in Phase 5. */}
 {/* TODO(owner): the SQL below is copied verbatim from the old page, including apparent slips (Task 5: "AS region_name" with no column before it and a trailing comma before FROM; Task 6: alias "star_date"). Verify against your BigQuery queries. */}
 
 This project is the application of skills that have been learned in a course. We were given datasets and instructions to follow. And here are the results:
@@ -53,8 +31,7 @@ This project is the application of skills that have been learned in a course. We
 
 <Figure
   src={skillsIntermediate}
-  alt="Table of skill sets and skills: Basic SQL (aggregate functions), Formatting and Cleaning in SQL (date format), SQL Joins, CTE and Window Function"
-  caption="Skill sets covered by the intermediate projects."
+  alt="Table of skill sets and skills: Basic SQL, Formatting and Cleaning in SQL, SQL Joins, CTE & Window Function"
 />
 
 **Dataset overview:**
@@ -91,8 +68,7 @@ ORDER BY months ASC;
 
 <Figure
   src={task1}
-  alt="BigQuery result table with columns months and avg_duration_in_minutes, five rows from 2014-01-01 to 2014-05-01"
-  caption="Task 1 result (top 5 data)."
+  alt="BigQuery result table with columns months and avg_duration_in_minutes, five rows"
 />
 
 
@@ -126,8 +102,7 @@ ORDER BY
 
 <Figure
   src={task2}
-  alt="BigQuery result table with region_name, total_trips and total_bikes for six regions, one of them null"
-  caption="Task 2 result."
+  alt="BigQuery result table with columns region_name, total_trips and total_bikes"
 />
 
 
@@ -158,8 +133,7 @@ GROUP BY member_gender;
 
 <Figure
   src={task3}
-  alt="BigQuery result table with member_gender, youngest_age and oldest_age for Female, Male and Other"
-  caption="Task 3 result."
+  alt="BigQuery result table with columns member_gender, youngest_age and oldest_age"
 />
 
 
@@ -204,8 +178,7 @@ WHERE region_name IS NOT NULL AND `rank` = 1;
 
 <Figure
   src={task4}
-  alt="BigQuery result table with the latest trip in each region: region_name, trip_id, start_date, start_station_name, duration_sec and member_gender"
-  caption="Task 4 result."
+  alt="BigQuery result table with columns region_name, trip_id, start_date, start_station_name, duration_sec and member_gender, one row per region"
 />
 
 
@@ -252,8 +225,7 @@ ORDER BY
 
 <Figure
   src={task5}
-  alt="BigQuery result table with start_date, region_name and cumulative total trips for Berkeley from 2017-11-01 to 2017-11-05"
-  caption="Task 5 result (top 5 data)."
+  alt="BigQuery result table with columns start_date, region_name and total_trips_cum, five rows"
 />
 
 
@@ -261,8 +233,7 @@ ORDER BY
 
 <Figure
   src={skillsAdvanced}
-  alt="Table of skill sets and skills: Basic SQL (aggregate functions), Formatting and Cleaning in SQL (date format), CTE and Window Function"
-  caption="Skill sets covered by the advanced projects."
+  alt="Table of skill sets and skills: Basic SQL, Formatting and Cleaning in SQL, CTE & Window Function"
 />
 
 **Dataset overview:**
@@ -371,8 +342,7 @@ ORDER BY month_formatted DESC;
 
 <Figure
   src={task6}
-  alt="BigQuery result table with month_formatted, region_name and growth for San Francisco, from 2017-12 back to 2017-08"
-  caption="Task 6 result (top 5 data)."
+  alt="BigQuery result table with columns month_formatted, region_name and growth, five rows"
 />
 
 
@@ -439,8 +409,7 @@ WHERE b.cohort_month IS NOT NULL ORDER BY 1,3;
 
 <Figure
   src={task7}
-  alt="BigQuery result table with cohort_month, total_users, month_number, active_users_in_a_month and percentage for the 2014-01 cohort"
-  caption="Task 7 result (top 5 data)."
+  alt="BigQuery result table with columns cohort_month, total_users, month_number, active_users_in_a_month and percentage, five rows"
 />
 
 
@@ -448,8 +417,7 @@ WHERE b.cohort_month IS NOT NULL ORDER BY 1,3;
 
 <Figure
   src={cohort}
-  alt="Cohort retention table for the 2014-01 to 2014-12 cohorts: percentage of users still posting in each following month, shaded from green to red"
-  caption="Task 7 cohort table."
+  alt="Cohort table of retention percentages by cohort month (rows) and month number (columns), shaded from green to red"
 />
 
 In the cohort table, we can see that around 85.5% of users have not posted again in the second month. And from 14.5% of users who are still posting in the second month, only 10.4% are still posting in the third month or there is a 4.1% decrease in users posting in the third month. The decline in the first two months was the largest compared to the decrease in users who were still actively posting in the following months.

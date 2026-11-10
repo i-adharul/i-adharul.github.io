@@ -1,12 +1,12 @@
 ---
 // Accessible, horizontally scrollable table. Generic: reuse for any comparison matrix.
-interface Props { caption: string; columns: string[]; rows: string[][]; note?: string }
-const { caption, columns, rows, note } = Astro.props;
+interface Props { label: string; columns: string[]; rows: string[][]; note?: string }
+// `label` is an accessible name only (aria-label); no visible caption is added to the original content.
+const { label, columns, rows, note } = Astro.props;
 ---
 <div class="not-prose my-8 rounded-card border border-line bg-surface">
-  <div class="overflow-x-auto rounded-card" tabindex="0" role="region" aria-label={caption}>
+  <div class="overflow-x-auto rounded-card" tabindex="0" role="region" aria-label={label}>
     <table class="w-full min-w-[48rem] border-separate border-spacing-0 text-left t-body-sm tabular">
-      <caption class="border-b border-line px-4 py-3 text-left t-caption uppercase tracking-wider text-muted">{caption}</caption>
       <thead>
         <tr>
           {columns.map((c) => <th scope="col" class="border-b border-line px-4 py-3 t-caption font-semibold uppercase tracking-wider text-muted">{c}</th>)}

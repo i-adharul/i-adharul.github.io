@@ -8,7 +8,6 @@ export async function getProjects() {
     href: `/${e.id}.html`,
     title: e.data.cardTitle ?? e.data.title,
     summary: e.data.summary,
-    finding: e.data.finding,
     chips: e.data.chips,
     image: e.data.thumb,
     alt: e.data.thumbAlt ?? '',

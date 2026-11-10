@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "parity": "node scripts/parity.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.3",

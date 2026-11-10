@@ -11,20 +11,16 @@ const caseStudies = defineCollection({
   loader: glob({ base: './src/content/case-studies', pattern: '**/*.mdx' }),
   schema: ({ image }) =>
     z.object({
-      /** Original project title: used for <title>, and as the subtitle unless cardTitle is set. */
+      /** Original page <title> (legacy <title>, approved typo fixes only). */
       title: z.string(),
-      /** Title shown on home cards / "next" card when it differs from `title`. */
+      /** Original page H1 when it differs from <title> (legacy <h1>). Defaults to `title`. */
+      heading: z.string().optional(),
+      /** Original home-card title (legacy index.html) when it differs from the page title. */
       cardTitle: z.string().optional(),
-      /** Finding-style H1. */
-      headline: z.string(),
-      /** true => written by the assistant from existing copy; owner must rewrite. */
-      headlineDerived: z.boolean().default(false),
       /** Meta description (<= ~200 chars). */
       description: z.string().max(200),
-      /** Card summary (home page / next-case card). */
+      /** Card summary: the original paragraph from legacy/index.html. */
       summary: z.string(),
-      /** "Key finding" line shown on selected-work cards. */
-      finding: z.string().optional(),
       /** flagship = E-commerceU case study ("Case study 0N"); course = course project. */
       kind: z.enum(['flagship', 'course']).default('flagship'),
       /** selected = home "Selected Work"; more = home "Course work & more". */
@@ -38,12 +34,14 @@ const caseStudies = defineCollection({
       typeCard: z.object({ label: z.string(), text: z.string() }).optional(),
       /** TOC depth: 2 = sections only, 3 = also sub-sections (e.g. one per SQL task). */
       tocDepth: z.union([z.literal(2), z.literal(3)]).default(2),
-      /** TL;DR / Impact block. */
-      tldr: z.object({
-        stats: z.array(z.object({ value: z.string(), label: z.string() })).min(1).max(4),
-        bottomLine: z.string().optional(),
-      }),
-      /** External resources (Colab, Tableau Public, BigQuery, Sheets...). Never re-hosted. */
+      /** Optional TL;DR / Impact block (component kept, currently unused: owner wants original text only). */
+      tldr: z
+        .object({
+          stats: z.array(z.object({ value: z.string(), label: z.string() })).min(1).max(4),
+          bottomLine: z.string().optional(),
+        })
+        .optional(),
+      /** Optional header link row (currently unused: links stay inline in the original text). */
       links: z.array(z.object({ label: z.string(), href: z.url() })).default([]),
     }),
 });

@@ -1,32 +1,13 @@
 ---
-# Original page <title>, with the "Lavel" -> "Level" typo fixed.
 title: E-commerceU KPI Dashboard for C-level, Managerial Level, and Operational Level
-# TODO(owner): headline derived by the assistant from the page's insight titles (insights 1, 3 and 6). Rewrite in your voice.
-headline: "E-commerceU's revenue fell 33.5% in 2021: new registered users collapsed and customers shifted to low-priced goods"
-headlineDerived: true
-# TODO(owner): meta description condensed from existing copy; no new facts.
 description: "KPI dashboards in Tableau for C-level, middle and operational management at E-commerceU, with insights and recommendations on the 2021 revenue decline."
 summary: "E-commerceU companies are trying to change the way companies make decisions to be more data-driven. And one way is to develop a Business Performance Management Dashboard (KPI) for each level of management."
-# TODO(owner): "finding" line chosen by the assistant (verbatim sentence from this page).
-finding: "Revenue loss of 33.5% from IDR 8.1 billion to IDR 5.4 billion."
 kind: flagship
 tier: selected
 order: 2
-chips: [Tableau, KPI dashboard]
+chips: [Tableau]
 thumb: ../../assets/images/thumb-dashboard.png
-thumbAlt: "C-level KPI dashboard in Tableau showing total revenue, unique transactions, unique buyers and quarterly revenue for 2020 and 2021"
-# TODO(owner): TL;DR stats chosen by the assistant; every figure appears verbatim in the text below.
-tldr:
-  stats:
-    - value: "33.5%"
-      label: "revenue loss, from IDR 8.1 billion to IDR 5.4 billion"
-    - value: "92.5%"
-      label: "decrease in the number of new registered users in 2021"
-    - value: "34.4%"
-      label: "decrease in revenue per transaction"
-links:
-  - label: "Dashboard on Tableau Public"
-    href: "https://public.tableau.com/app/profile/adharul.imron/viz/testst_16564159265920/OperationsDashboard"
+thumbAlt: "Tableau C-level dashboard with KPI tiles and a quarterly revenue bar chart for 2020 and 2021"
 ---
 import clevel from '../../assets/images/dashboard/clevel-dashboard.png';
 import mlevel from '../../assets/images/dashboard/mlevel-dashboard.png';
@@ -38,7 +19,6 @@ import arpuDecrease from '../../assets/images/dashboard/arpu-decrease.png';
 import rootCause from '../../assets/images/dashboard/root-cause-tree.png';
 import priceGroup from '../../assets/images/dashboard/price-group.jpg';
 
-{/* TODO(owner): all figure captions/alt texts are drafted from the surrounding copy and images; review in Phase 5. */}
 {/* TODO(owner): "(2022)" below is copied verbatim from the old page; confirm it is intended. */}
 {/* TODO(owner): "Rp1,115.030" (Insight 4) is copied verbatim; the dashboard image shows Rp.1,115,030. Verify. */}
 
@@ -70,8 +50,7 @@ In this dashboard we can see the company's performance in general. We can do a g
 
 <Figure
   src={clevel}
-  alt="C-level dashboard in Tableau: total revenue 5.4B (-33.5% vs previous year), unique transactions, unique buyers, average revenue per buyer, average revenue per transaction, average transactions per buyer, and a quarterly revenue bar chart for 2020 and 2021"
-  caption="Top Level Management (C-Level) dashboard."
+  alt="Tableau C-level dashboard with KPI tiles for total revenue, unique transactions, unique buyers, average revenue per buyer, average revenue per transaction and average transactions per buyer, and a quarterly revenue bar chart for 2020 and 2021"
 />
 
 ### Middle Level Management (Product & Sales) Dashboard
@@ -80,8 +59,7 @@ In this dashboard we can see the company's performance in more detail. We can al
 
 <Figure
   src={mlevel}
-  alt="Middle level dashboard in Tableau with KPI tiles, quarterly revenue, monthly registered users and unique buyers, price-group, province and category tables, an event funnel and a customer cohort table"
-  caption="Middle Level Management (Product & Sales) dashboard."
+  alt="Tableau middle level dashboard with KPI tiles, quarterly revenue, monthly registered users, monthly unique buyers, price-group, province and category tables, an event funnel and a customer cohort table"
 />
 
 ### Operational Level Management (Marketing) Dashboard
@@ -90,8 +68,7 @@ In this dashboard, detailed information to support operations such as for campai
 
 <Figure
   src={olevel}
-  alt="Operations level dashboard in Tableau with weekly revenue, transactions, customers and registered users, revenue by category, province and gender, checkout time heat map and merchant overview, plus category-wise and province-wise breakdowns"
-  caption="Operational Level Management (Marketing) dashboard."
+  alt="Tableau operations level dashboard with weekly revenue, transactions, customers and registered users, revenue by category, province, gender and price range, a checkout time heat map, a merchant overview, and category-wise and province-wise breakdowns"
 />
 
 ## Insights and Recommendations
@@ -104,8 +81,7 @@ The company suffers revenue loss of 33.5% from IDR 8.1 billion to IDR 5.4 billio
 
 <Figure
   src={revenueDecrease}
-  alt="Quarterly revenue bar chart for 2020 and 2021 with quarter-over-quarter change, and a total revenue tile showing 5.4B, down 33.5% versus the previous year"
-  caption="Quarterly revenue, 2020 vs 2021, and total revenue change."
+  alt="Quarterly revenue bar chart for 2020 and 2021 with a quarter-over-quarter line, and a total revenue tile with a revenue trend line"
 />
 
 </Insight>
@@ -120,8 +96,7 @@ On the other hand, average revenue per buyer decreased significantly by 38% from
 
 <Figure
   src={transactionStagnant}
-  alt="Tree from total revenue (-33.5%) to number of transactions (stagnant, +1.2%) and average revenue per buyer (-38%), with the matching dashboard tiles"
-  caption="Total revenue split into number of transactions and average revenue per buyer."
+  alt="Tree diagram from total revenue to number of transactions and average revenue per buyer, next to the unique transactions and average revenue per user dashboard tiles"
 />
 
 </Insight>
@@ -136,8 +111,7 @@ The decrease in the number of new registered user in 2021 can be caused by a lac
 
 <Figure
   src={registeredUser}
-  alt="Tree splitting the number of transactions into new, existing and old user contribution, with yearly registered users down 92.5% to 107 in 2021, beside a bar chart of transactions by year of user registration"
-  caption="Contribution to transactions by new, existing and old users, and yearly registered users."
+  alt="Tree diagram from total revenue through number of transactions to new, existing and old user contribution and yearly registered users, with a registered user tile and a bar chart of transactions by year of user registration"
 />
 
 </Insight>
@@ -148,8 +122,7 @@ On another indicator, what caused the drastic decline in the aspect of average r
 
 <Figure
   src={arpuDecrease}
-  alt="Tree from average revenue per buyer (-38%) to transactions per buyer (-5.5%) and revenue per transaction (-34.4%), with the matching dashboard tiles"
-  caption="Average revenue per buyer split into transactions per buyer and revenue per transaction."
+  alt="Tree diagram from total revenue to average revenue per buyer, then transactions per buyer and revenue per transaction, with the matching dashboard tiles"
 />
 
 </Insight>
@@ -160,8 +133,7 @@ Next, we will discuss what might be the cause of the decrease in revenue per tra
 
 <Figure
   src={rootCause}
-  alt="Root-cause tree: total revenue (-33.5%) splits into number of transactions (+1.2%) and average revenue per buyer (-38%), down to yearly registered users (-92.5%) and revenue per transaction (-34.4%), the two problem areas outlined in red"
-  caption="Root-cause tree for the revenue decrease."
+  alt="Root-cause tree: total revenue splits into number of transactions and average revenue per buyer, then into new, existing and old user contribution, yearly registered users, transactions per buyer and revenue per transaction; two nodes are outlined in red"
 />
 
 </Insight>
@@ -178,8 +150,7 @@ The number transactions per price group are also showing the same pattern as rev
 
 <Figure
   src={priceGroup}
-  alt="Tables of total revenue and number of transactions per price group (under 500k, 500k to 1.5m, above 1.5m) for 2020 and 2021, with the percentage difference"
-  caption="Revenue and number of transactions per price group, 2020 vs 2021."
+  alt="Two tables of total revenue and number of transactions by price group (under 500k, 500k to 1.5m, above 1.5m) for 2020 and 2021, with the percentage difference"
 />
 
 </Insight>

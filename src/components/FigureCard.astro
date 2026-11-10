@@ -1,6 +1,6 @@
 ---
 // Chart/screenshot frame: inset background + caption bar. Full-width inside the page.
-interface Props { caption: string; pending?: boolean }
+interface Props { caption?: string; pending?: boolean }
 const { caption, pending = false } = Astro.props;
 ---
 <figure class="my-8 overflow-hidden rounded-card border border-line bg-surface">
@@ -9,5 +9,5 @@ const { caption, pending = false } = Astro.props;
       ? <p class="py-10 text-center t-body-sm text-ink">Chart pending — TODO(owner): supply original image</p>
       : <slot />}
   </div>
-  <figcaption class="border-t border-line px-4 py-3 t-caption text-muted">{caption}</figcaption>
+  {caption && <figcaption class="border-t border-line px-4 py-3 t-caption text-muted">{caption}</figcaption>}
 </figure>
