@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elena Vance — Senior Data Analyst Portfolio</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim matching Design Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#00504a",
+            "primary": "#005c55",
+            "surface-tint": "#006a63",
+            "on-error": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "outline": "#6e7977",
+            "tertiary-fixed": "#ffdbce",
+            "secondary-fixed": "#71f8e4",
+            "on-secondary-container": "#006f64",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#3e4947",
+            "primary-fixed": "#9cf2e8",
+            "on-secondary-fixed-variant": "#005048",
+            "surface-container-lowest": "#ffffff",
+            "background": "#faf8ff",
+            "tertiary": "#7f4025",
+            "outline-variant": "#bdc9c6",
+            "inverse-primary": "#80d5cb",
+            "on-background": "#131b2e",
+            "tertiary-fixed-dim": "#ffb598",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-surface": "#283044",
+            "surface-bright": "#faf8ff",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "surface-container-low": "#f2f3ff",
+            "secondary": "#006b5f",
+            "error": "#ba1a1a",
+            "on-primary-container": "#a3faef",
+            "primary-fixed-dim": "#80d5cb",
+            "tertiary-container": "#9c573a",
+            "on-tertiary-container": "#ffe5db",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed": "#370e00",
+            "on-secondary-fixed": "#00201c",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-high": "#e2e7ff",
+            "primary-container": "#0f766e",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#72361b",
+            "secondary-fixed-dim": "#4fdbc8",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#00201d",
+            "secondary-container": "#6df5e1",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "3rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin": "1.5rem",
+            "gutter": "1.5rem",
+            "gutter-lg": "2rem",
+            "margin-sm": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter", "sans-serif"],
+            "display": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "metric-stat-mobile": ["Inter", "sans-serif"],
+            "display-mobile": ["Inter", "sans-serif"],
+            "caption": ["Inter", "sans-serif"],
+            "metric-stat": ["Inter", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "headline-sm": ["1.125rem", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display": ["3.5rem", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-md": ["1rem", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.6", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-lg": ["2.25rem", { "lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-md": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "metric-stat-mobile": ["2rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-mobile": ["2.25rem", { "lineHeight": "1.15", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "caption": ["0.75rem", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "metric-stat": ["2.5rem", { "lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #0b0f19;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-[#0f766e] selection:text-white">
+<!-- Mobile Viewport Wrapper (Max 390px simulated on mobile, centered) -->
+<div class="max-w-[390px] mx-auto min-h-screen bg-[#0b0f19] border-x border-slate-800/80 relative flex flex-col shadow-2xl">
+<!-- TopNavBar (Shared Component implementation) -->
+<header class="sticky top-0 w-full z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
+<div class="px-4 h-16 flex items-center justify-between">
+<!-- Logo / Title -->
+<a class="flex flex-col text-left group" href="#hero">
+<span class="text-headline-sm font-headline-sm font-semibold text-slate-100 tracking-tight leading-none group-hover:text-primary-fixed transition-colors duration-150">Elena Vance</span>
+<span class="text-[10px] font-caption tracking-wider text-slate-400 mt-0.5 uppercase">Senior Data Analyst</span>
+</a>
+<!-- Right Side Nav Actions: Links & Dark Mode Indicator -->
+<div class="flex items-center gap-3">
+<nav class="flex items-center gap-3 text-caption font-caption">
+<a class="text-primary-fixed font-semibold" href="#work">Work</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors duration-150" href="#skills">Skills</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors duration-150" href="#contact">Contact</a>
+</nav>
+<!-- Trailing action: dark_mode toggle button (Active Dark Mode) -->
+<button aria-label="Dark mode active" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700/80 flex items-center justify-center text-primary-fixed hover:border-slate-500 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pt-6 pb-12 flex flex-col gap-10">
+<!-- Hero Section -->
+<section class="space-y-4 pt-2" id="hero">
+<!-- Status indicator chip -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] font-caption text-slate-300">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#14b8a6]"></span>
+</span>
+<span>Available for advisory &amp; full-time roles</span>
+</div>
+<!-- Headline & Editorial Monograph Introduction -->
+<div class="space-y-3">
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-slate-50 tracking-tight">
+            Synthesizing messy behavioral pipelines into executive leverage.
+          </h1>
+<p class="text-body-sm font-body-sm text-slate-400 leading-relaxed">
+            Senior Data Analyst with 8+ years architecting probabilistic revenue models, causal inference experiments, and cross-functional telemetry for high-scale digital platforms.
+          </p>
+</div>
+<!-- Quick Spec Details -->
+<div class="grid grid-cols-2 gap-2 pt-2 text-[11px] font-mono text-slate-400 border-t border-slate-800/80">
+<div><span class="text-slate-500">FOCUS:</span> Causal Inference &amp; LTV</div>
+<div><span class="text-slate-500">STACK:</span> SQL, Python, d3.js, DBT</div>
+</div>
+</section>
+<!-- Key Metrics Strip (High Contrast Tabular Performance) -->
+<section class="space-y-2">
+<div class="flex items-center justify-between text-caption font-caption text-slate-400 pb-1 border-b border-slate-800">
+<span>01 / QUANTITATIVE OUTCOMES</span>
+<span class="font-mono text-[10px]">CUMULATIVE</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<!-- Metric Card 1 -->
+<div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3.5 space-y-1">
+<span class="text-caption font-caption text-slate-400">Attributed ARR Growth</span>
+<div class="text-metric-stat-mobile font-metric-stat-mobile text-primary-fixed font-mono font-bold tracking-tight">
+              +$18.4M
+            </div>
+<p class="text-[11px] font-body-sm text-slate-400 leading-tight">Churn remediation models across 4.2M active subs.</p>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3.5 space-y-1">
+<span class="text-caption font-caption text-slate-400">Statistical Significance</span>
+<div class="text-metric-stat-mobile font-metric-stat-mobile text-slate-100 font-mono font-bold tracking-tight">
+              99.4%
+            </div>
+<p class="text-[11px] font-body-sm text-slate-400 leading-tight">Controlled A/B test confidence over 140+ sprints.</p>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3.5 space-y-1">
+<span class="text-caption font-caption text-slate-400">ETL Latency Reduction</span>
+<div class="text-metric-stat-mobile font-metric-stat-mobile text-slate-100 font-mono font-bold tracking-tight">
+              -68%
+            </div>
+<p class="text-[11px] font-body-sm text-slate-400 leading-tight">Optimized Snowflake DAG orchestration.</p>
+</div>
+<!-- Metric Card 4 -->
+<div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3.5 space-y-1">
+<span class="text-caption font-caption text-slate-400">Executive Dashboards</span>
+<div class="text-metric-stat-mobile font-metric-stat-mobile text-primary-fixed font-mono font-bold tracking-tight">
+              34+
+            </div>
+<p class="text-[11px] font-body-sm text-slate-400 leading-tight">Board-level real-time decision consoles.</p>
+</div>
+</div>
+</section>
+<!-- Case Studies Section (With Light-Background Figure Cards for Editorial Contrast) -->
+<section class="space-y-5" id="work">
+<div class="flex items-center justify-between text-caption font-caption text-slate-400 pb-1 border-b border-slate-800">
+<span>02 / SELECTED CASE STUDIES</span>
+<span class="font-mono text-[10px]">2023 — 2025</span>
+</div>
+<!-- Case Study 1 -->
+<article class="bg-[#0f172a] border border-slate-800 rounded-lg p-4 space-y-4 hover:border-slate-700 transition-colors">
+<!-- Metadata Tag -->
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-primary-fixed border border-slate-700">FINTECH SUBSCRIPTION</span>
+<span class="text-[11px] font-mono text-slate-400">Q3 2024</span>
+</div>
+<!-- Title & Impact -->
+<div class="space-y-1.5">
+<h2 class="text-headline-sm font-headline-sm font-semibold text-slate-100">
+              Decoupling Latent Churn in Micro-Billing Cohorts
+            </h2>
+<p class="text-body-sm font-body-sm text-slate-300">
+              Formulated a discrete-time hazard model predicting voluntary attrition 42 days prior to cancellation, enabling targeted programmatic retention loops.
+            </p>
+</div>
+<!-- CRITICAL MANDATE: LIGHT-BACKGROUND FIGURE CARD -->
+<div class="bg-white text-slate-900 rounded-lg p-4 border border-slate-300 shadow-sm space-y-3">
+<div class="flex items-center justify-between border-b border-slate-200 pb-2">
+<span class="text-[11px] font-mono font-semibold tracking-tight text-slate-800 uppercase">Retention Hazard vs. Cohort Age</span>
+<span class="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 font-semibold">+14.2% AUC</span>
+</div>
+<!-- Custom High-Contrast SVG Data Chart -->
+<div class="w-full pt-1">
+<svg aria-label="Retention Hazard Curve" class="w-full h-auto overflow-visible" viewbox="0 0 320 130">
+<!-- Grid Lines -->
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="30" x2="310" y1="20" y2="20"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="30" x2="310" y1="55" y2="55"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="30" x2="310" y1="90" y2="90"></line>
+<line stroke="#94A3B8" stroke-width="1" x1="30" x2="310" y1="110" y2="110"></line>
+<line stroke="#94A3B8" stroke-width="1" x1="30" x2="30" y1="10" y2="110"></line>
+<!-- Y-Axis Ticks -->
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="24" y="23">1.0</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="24" y="58">0.5</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="24" y="93">0.2</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="24" y="113">0.0</text>
+<!-- Baseline Curve (Gray) -->
+<path d="M 30 25 C 70 30, 110 70, 160 85 C 210 95, 260 102, 310 105" fill="none" stroke="#94A3B8" stroke-dasharray="4,3" stroke-width="2"></path>
+<!-- Model-Driven Intervention Curve (Deep Teal) -->
+<path d="M 30 25 C 70 28, 110 40, 160 48 C 210 52, 260 58, 310 62" fill="none" stroke="#005c55" stroke-width="2.5"></path>
+<!-- Crucial Inflection Marker -->
+<circle cx="160" cy="48" fill="#005c55" r="4" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#005c55" font-family="JetBrains Mono" font-size="8" font-weight="bold" x="165" y="44">Day 42 Alert</text>
+<!-- X-Axis Labels -->
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="30" y="122">D0</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="110" y="122">D30</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="180" y="122">D60</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="250" y="122">D90</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="310" y="122">D120</text>
+</svg>
+</div>
+<!-- Figure Caption -->
+<div class="pt-2 border-t border-slate-200 flex flex-col gap-1 text-[11px] text-slate-600 font-caption">
+<span class="font-semibold text-slate-900">Fig. 1: 90-day retention curve with proactive algorithmic intervention</span>
+<span class="text-[10px] font-mono text-slate-500">Source: Snowflake core_telemetry.events (N = 820,400) · Python lifelines · p &lt; 0.001</span>
+</div>
+</div>
+<!-- Metric Strip -->
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-800/80">
+<div>
+<span class="text-[10px] font-mono text-slate-400 uppercase">Quarterly Impact</span>
+<p class="text-body-md font-bold font-mono text-primary-fixed">-$3.1M Churn</p>
+</div>
+<div>
+<span class="text-[10px] font-mono text-slate-400 uppercase">False Positive Rate</span>
+<p class="text-body-md font-bold font-mono text-slate-200">3.8% (Target &lt;5%)</p>
+</div>
+</div>
+</article>
+<!-- Case Study 2 -->
+<article class="bg-[#0f172a] border border-slate-800 rounded-lg p-4 space-y-4 hover:border-slate-700 transition-colors">
+<!-- Metadata Tag -->
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-slate-800 text-[11px] font-mono text-primary-fixed border border-slate-700">MARKETPLACE EXPERIMENTATION</span>
+<span class="text-[11px] font-mono text-slate-400">Q1 2025</span>
+</div>
+<!-- Title & Impact -->
+<div class="space-y-1.5">
+<h2 class="text-headline-sm font-headline-sm font-semibold text-slate-100">
+              Two-Sided Network Effects &amp; Pricing Elasticity
+            </h2>
+<p class="text-body-sm font-body-sm text-slate-300">
+              Executed cluster-randomized synthetic control experiments across 18 geographic metropolitan markets to isolate supplier cannibalization.
+            </p>
+</div>
+<!-- CRITICAL MANDATE: LIGHT-BACKGROUND FIGURE CARD -->
+<div class="bg-white text-slate-900 rounded-lg p-4 border border-slate-300 shadow-sm space-y-3">
+<div class="flex items-center justify-between border-b border-slate-200 pb-2">
+<span class="text-[11px] font-mono font-semibold tracking-tight text-slate-800 uppercase">Synthetic Control: GMV Differential</span>
+<span class="text-[10px] font-mono text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded border border-teal-200 font-semibold">ATT = +8.6%</span>
+</div>
+<!-- Custom High-Contrast SVG Bar / Distribution Chart -->
+<div class="w-full pt-1">
+<svg aria-label="Marketplace Synthetic Control" class="w-full h-auto overflow-visible" viewbox="0 0 320 120">
+<!-- Axes -->
+<line stroke="#94A3B8" stroke-width="1" x1="30" x2="30" y1="15" y2="95"></line>
+<line stroke="#94A3B8" stroke-width="1" x1="30" x2="310" y1="95" y2="95"></line>
+<!-- Zero Delta Line -->
+<line stroke="#CBD5E1" stroke-dasharray="2,2" stroke-width="1" x1="30" x2="310" y1="65" y2="65"></line>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="end" x="24" y="68">0%</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="end" x="24" y="25">+15%</text>
+<!-- Bars: Metro Clusters -->
+<!-- Cluster 1 -->
+<rect fill="#005c55" height="57" rx="2" width="16" x="50" y="38"></rect>
+<rect fill="#94A3B8" height="35" rx="2" width="16" x="70" y="60"></rect>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="68" y="107">NYC</text>
+<!-- Cluster 2 -->
+<rect fill="#005c55" height="51" rx="2" width="16" x="110" y="44"></rect>
+<rect fill="#94A3B8" height="37" rx="2" width="16" x="130" y="58"></rect>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="128" y="107">LON</text>
+<!-- Cluster 3 -->
+<rect fill="#005c55" height="63" rx="2" width="16" x="170" y="32"></rect>
+<rect fill="#94A3B8" height="31" rx="2" width="16" x="190" y="64"></rect>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="188" y="107">BER</text>
+<!-- Cluster 4 -->
+<rect fill="#005c55" height="45" rx="2" width="16" x="230" y="50"></rect>
+<rect fill="#94A3B8" height="27" rx="2" width="16" x="250" y="68"></rect>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="248" y="107">TYO</text>
+<!-- Legend in chart -->
+<rect fill="#005c55" height="8" rx="1" width="8" x="220" y="10"></rect>
+<text fill="#1E293B" font-family="Inter" font-size="8" x="232" y="17">Treated</text>
+<rect fill="#94A3B8" height="8" rx="1" width="8" x="270" y="10"></rect>
+<text fill="#64748B" font-family="Inter" font-size="8" x="282" y="17">Synth</text>
+</svg>
+</div>
+<!-- Figure Caption -->
+<div class="pt-2 border-t border-slate-200 flex flex-col gap-1 text-[11px] text-slate-600 font-caption">
+<span class="font-semibold text-slate-900">Fig. 2: Treated GMV vs. Synthetic baseline post-surge policy rollout</span>
+<span class="text-[10px] font-mono text-slate-500">Method: CausalImpact / Bayesian Structural Time Series · N = 18 MSAs</span>
+</div>
+</div>
+<!-- Metric Strip -->
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-800/80">
+<div>
+<span class="text-[10px] font-mono text-slate-400 uppercase">Gross Take-Rate</span>
+<p class="text-body-md font-bold font-mono text-primary-fixed">+114 bps</p>
+</div>
+<div>
+<span class="text-[10px] font-mono text-slate-400 uppercase">Vendor Retention</span>
+<p class="text-body-md font-bold font-mono text-slate-200">94.1% (Neutral)</p>
+</div>
+</div>
+</article>
+</section>
+<!-- Skills Section (Structured Mobile Editorial List) -->
+<section class="space-y-4" id="skills">
+<div class="flex items-center justify-between text-caption font-caption text-slate-400 pb-1 border-b border-slate-800">
+<span>03 / TECHNICAL ARSENAL</span>
+<span class="font-mono text-[10px]">PRODUCTION READY</span>
+</div>
+<div class="space-y-3">
+<!-- Skill Category 1 -->
+<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-headline-sm font-headline-sm text-sm text-slate-200 font-semibold">Modeling &amp; Causal Inference</span>
+<span class="text-[10px] font-mono text-primary-fixed">CORE DEPTH</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Diff-in-Diff</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Synthetic Control</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Survival Analysis</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Bayesian Regression</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Propensity Matching</span>
+</div>
+</div>
+<!-- Skill Category 2 -->
+<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-headline-sm font-headline-sm text-sm text-slate-200 font-semibold">Languages &amp; Computational Tools</span>
+<span class="text-[10px] font-mono text-primary-fixed">ADVANCED</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Python (pandas/scipy)</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">SQL (Window/CTEs)</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">R (tidyverse)</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">d3.js &amp; Observable</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">DuckDB</span>
+</div>
+</div>
+<!-- Skill Category 3 -->
+<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-headline-sm font-headline-sm text-sm text-slate-200 font-semibold">Data Infrastructure &amp; Governance</span>
+<span class="text-[10px] font-mono text-primary-fixed">PIPELINES</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Snowflake</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">BigQuery</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">DBT Core</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">Airflow DAGs</span>
+<span class="px-2 py-1 rounded bg-[#0b0f19] border border-slate-700/80 text-body-sm text-[12px] font-mono text-slate-300">PostHog Telemetry</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Call to Action Section -->
+<section class="bg-slate-900/90 border border-slate-800 rounded-lg p-5 space-y-4" id="contact">
+<div class="space-y-1">
+<span class="text-[11px] font-mono text-primary-fixed uppercase tracking-wider">COLLABORATION</span>
+<h3 class="text-headline-md font-headline-md font-bold text-slate-100">Initiate an Advisory or Project Inquiry</h3>
+<p class="text-body-sm font-body-sm text-slate-400">
+            Available for Q2/Q3 data modeling advisories, pipeline refactoring, or principal analytics appointments.
+          </p>
+</div>
+<a class="w-full py-3 px-4 rounded-lg bg-primary-container hover:bg-[#115e59] text-white font-headline-sm text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors duration-150" href="mailto:elena.vance@analytics.dev">
+<span>Open Email Client</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<div class="pt-2 flex items-center justify-between text-caption font-caption text-slate-500 border-t border-slate-800">
+<span>Response latency: &lt; 24h</span>
+<span class="font-mono text-slate-400">UTC-5 / NYC</span>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Implementation) -->
+<footer class="w-full bg-[#0b0f19] border-t border-slate-800/80 py-8 px-4 flex flex-col gap-6">
+<!-- Brand & Analytical Philosophy -->
+<div class="space-y-1">
+<div class="text-headline-sm font-headline-sm font-semibold text-slate-100 tracking-tight">Elena Vance</div>
+<p class="text-caption font-caption text-slate-400">
+          © 2025 Elena Vance. Designed with analytical rigor &amp; editorial clarity.
+        </p>
+</div>
+<!-- Links Cluster (Email, GitHub, LinkedIn, Kaggle) as per JSON specification -->
+<div class="flex flex-wrap items-center gap-4 text-body-sm font-body-sm pt-1">
+<a class="text-slate-400 hover:text-primary-fixed transition-colors duration-150 flex items-center gap-1" href="mailto:elena.vance@analytics.dev">
+<span>Email</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-slate-400 hover:text-primary-fixed transition-colors duration-150 flex items-center gap-1" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span>GitHub</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-slate-400 hover:text-primary-fixed transition-colors duration-150 flex items-center gap-1" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span>LinkedIn</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-slate-400 hover:text-primary-fixed transition-colors duration-150 flex items-center gap-1" href="https://kaggle.com" rel="noopener noreferrer" target="_blank">
+<span>Kaggle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Subtle System Verification Stamp -->
+<div class="pt-3 border-t border-slate-900 flex items-center justify-between text-[10px] font-mono text-slate-600">
+<span>LAT: 40.7128° N, 74.0060° W</span>
+<span>BUILD v2.4.1</span>
+</div>
+</footer>
+</div>
+<script>
+    // Smooth scroll for nav anchor tags
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body></html>
