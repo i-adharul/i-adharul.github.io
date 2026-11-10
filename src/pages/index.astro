@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import Chip from '../components/Chip.astro';
+import FigureCard from '../components/FigureCard.astro';
+---
+<Base title="Adharul Imron — Data Analyst" description="A Data Analyst with experience in Growth and Product Marketing.">
+  <section class="mx-auto max-w-page px-4 py-16 md:px-8 md:py-24 lg:px-12">
+    <p class="t-caption text-accent">Phase 1 scaffold — placeholder, real content in Phase 2</p>
+    <h1 class="t-display mt-4 max-w-3xl">Hi, I'm Imron</h1>
+    <p class="t-body-lg mt-6 max-w-prose text-muted">A Data Analyst with experience in Growth and Product Marketing</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <Button href="#work">Primary button</Button>
+      <Button href="#work" variant="ghost">Ghost button</Button>
+    </div>
+  </section>
+
+  <section id="work" class="mx-auto max-w-page px-4 pb-16 md:px-8 lg:px-12">
+    <h2 class="t-headline-lg">Token check</h2>
+    <div class="mt-4 flex flex-wrap gap-2"><Chip>SQL</Chip><Chip>Python</Chip><Chip>BigQuery</Chip></div>
+    <p class="t-metric mt-6">1,234 <span class="t-body-sm font-normal tracking-normal text-muted">tabular figure sample</span></p>
+    <FigureCard caption="Figure caption bar (source · tool · date)" pending />
+  </section>
+
+  <section id="skills" class="mx-auto max-w-page px-4 pb-16 md:px-8 lg:px-12"><h2 class="t-headline-md">Skills (anchor target)</h2></section>
+  <section id="contact" class="mx-auto max-w-page px-4 pb-24 md:px-8 lg:px-12"><h2 class="t-headline-md">Contact (anchor target)</h2></section>
+</Base>
