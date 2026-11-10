@@ -1,0 +1,22 @@
+---
+import Icon from './Icon.astro';
+---
+<button type="button" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false"
+  class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line text-ink hover:border-line-strong hover:text-accent">
+  <Icon name="moon" class="h-4 w-4 dark:hidden" />
+  <Icon name="sun" class="hidden h-4 w-4 dark:block" />
+</button>
+<script>
+  // The initial theme is applied pre-paint by the inline script in Base.astro.
+  const root = document.documentElement;
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+    const sync = () => btn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+    sync();
+    btn.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch {}
+      sync();
+    });
+  });
+</script>
