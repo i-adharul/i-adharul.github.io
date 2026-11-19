@@ -3,11 +3,11 @@
 export const hero = {
   tagline: 'In God we trust. All others must bring data.',
   title: "Hi, I'm Imron",
-  subtitle: 'A Data Analyst with experience in Growth and Product Marketing',
+  subtitle: 'A Full Stack Developer with a background in data analytics, growth, and product marketing',
   paragraphs: [
-    'Released 20+ product campaigns and analyzed user fraud in a promotional program to successfully secure tens of millions of rupiah marketing budget. I also have experience in data visualization and visualizing multiple presentation decks and project reports.',
-    'Right now, I want to explore new possibilities in Data Analytics and/or Business Intelligence. Data Analytics successfully combines aspects of work that I love such as engineering, working with numbers, visualization, and communication. I really want to contribute to the progress of a business by using data.',
-    'Now building full stack web apps in JavaScript. See my software projects on GitHub.',
+    'Before moving into software, I worked in data analytics, growth, and product roles. I released 20+ product campaigns and analyzed user fraud in a promotional program to successfully secure tens of millions of rupiah marketing budget.',
+    'I then trained as a full stack developer at Hacktiv8 (Fullstack JavaScript Immersive, Honors) and now build web apps with React, Node.js, Express, and PostgreSQL. I care about the parts users never see: data that stays correct, isolated per company, and safe to retry.',
+    'This site keeps my data analytics case studies. My software projects are on GitHub.',
   ],
 };
 
