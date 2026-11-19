@@ -1,12 +1,11 @@
 # Alt-text review
 
-Generated from the production build (`dist/`). Alt text is purely descriptive (chart type, axes, categories); it states no conclusions. Edit in the MDX frontmatter (`thumbAlt`), the MDX bodies (`alt=`), or `src/data/home.ts` (`portraitAlt`).
+Generated from the production build (`dist/`). Alt text is purely descriptive (chart type, axes, categories); it states no conclusions. Edit in the MDX frontmatter (`thumbAlt`), the MDX bodies (`alt=`).
 
 43 images.
 
 | # | Page | Image | Current alt text |
 |---|---|---|---|
-| 1 | `/` | `portrait` | Portrait of Adharul Imron smiling, wearing a tan sweatshirt over a white collared shirt |
 | 2 | `/` | `segment-attributes` | Stacked bar charts of the number of users, number of transactions and revenue per customer cluster, with a table of average revenue per buyer, average revenue per transaction and average transactions per buyer |
 | 3 | `/` | `thumb-dashboard` | Tableau C-level dashboard with KPI tiles and a quarterly revenue bar chart for 2020 and 2021 |
 | 4 | `/` | `thumb-eda` | Two tables of total revenue and number of transactions by price group (under 500k, 500k to 1.5m, above 1.5m) for 2020 and 2021 |

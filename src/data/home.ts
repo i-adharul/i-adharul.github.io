@@ -1,5 +1,4 @@
 // Home-page content (hero, skills, contact). Project cards come from the content collection.
-import portrait from '../assets/images/portrait.jpg';
 
 export const hero = {
   tagline: 'In God we trust. All others must bring data.',
@@ -11,9 +10,6 @@ export const hero = {
     // TODO(owner): outdated line, kept verbatim from the old site. Update or remove.
     'Recently finished my Full Stack Data Analysis Program at RevoU. Currently participating in the special program Virtual Labs RevoU x Tokopedia.',
   ],
-  portrait,
-  // TODO(owner): confirm this alt text (drafted from the photo itself).
-  portraitAlt: 'Portrait of Adharul Imron smiling, wearing a tan sweatshirt over a white collared shirt',
 };
 
 export const skills = [

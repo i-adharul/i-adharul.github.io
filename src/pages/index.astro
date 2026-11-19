@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
@@ -17,7 +16,7 @@ const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
 <Base title="Adharul Imron — Data Analyst" description={`${hero.subtitle}. SQL, Python, BigQuery, Tableau and Metabase case studies.`}>
   <!-- Hero -->
   <section class={`${wrap} py-14 md:py-24`}>
-    <div class="grid items-center gap-10 md:grid-cols-[1fr_17rem] lg:grid-cols-[1fr_20rem] lg:gap-16">
+    <div class="max-w-3xl">
       <div>
         <p class="t-caption uppercase tracking-wider text-accent">{hero.tagline}</p>
         <h1 class="t-display mt-4">{hero.title}</h1>
@@ -30,9 +29,6 @@ const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
           <Button href="#work" variant="ghost">See my work <Icon name="arrow-right" class="h-4 w-4" /></Button>
         </div>
       </div>
-      <Image src={hero.portrait} alt={hero.portraitAlt} width={800} height={1000} widths={[400, 800]}
-        sizes="(min-width: 1024px) 320px, (min-width: 768px) 272px, 60vw" format="webp" fit="cover" position="top"
-        class="aspect-[4/5] w-3/5 max-w-xs rounded-card border border-line object-cover md:w-full" loading="eager" fetchpriority="high" />
     </div>
   </section>
 
