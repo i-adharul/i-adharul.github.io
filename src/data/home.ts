@@ -7,8 +7,7 @@ export const hero = {
   paragraphs: [
     'Released 20+ product campaigns and analyzed user fraud in a promotional program to successfully secure tens of millions of rupiah marketing budget. I also have experience in data visualization and visualizing multiple presentation decks and project reports.',
     'Right now, I want to explore new possibilities in Data Analytics and/or Business Intelligence. Data Analytics successfully combines aspects of work that I love such as engineering, working with numbers, visualization, and communication. I really want to contribute to the progress of a business by using data.',
-    // TODO(owner): outdated line, kept verbatim from the old site. Update or remove.
-    'Recently finished my Full Stack Data Analysis Program at RevoU. Currently participating in the special program Virtual Labs RevoU x Tokopedia.',
+    'Now building full stack web apps in JavaScript. See my software projects on GitHub.',
   ],
 };
 
