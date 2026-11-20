@@ -32,9 +32,9 @@ const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
     </div>
   </section>
 
-  <!-- Selected Work -->
+  <!-- Selected Case Studies -->
   <section id="work" class={`${wrap} border-t border-line py-14 md:py-20`}>
-    <h2 class="t-headline-lg">Selected Work</h2>
+    <h2 class="t-headline-lg">Selected Case Studies</h2>
     <div class="mt-8 space-y-6">
       {selectedWork.map((p, i) => <ProjectCard project={p} index={i} />)}
     </div>
@@ -48,12 +48,12 @@ const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
     </div>
   </section>
 
-  <!-- Course work (secondary, collapsed) -->
+  <!-- Coursework (secondary) -->
   <section id="more-work" class={`${wrap} border-t border-line py-14 md:py-20`}>
     <details open class="group rounded-card border border-line bg-surface">
       <summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-card p-5 md:p-6 [&::-webkit-details-marker]:hidden">
         <span>
-          <span class="t-headline-md block">Course work &amp; more</span>
+          <span class="t-headline-md block">Coursework &amp; more</span>
         </span>
         <Icon name="arrow-right" class="h-5 w-5 shrink-0 rotate-90 text-muted transition-transform group-open:-rotate-90" />
       </summary>
