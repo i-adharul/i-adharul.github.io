@@ -1,12 +1,13 @@
 // Single source of truth for site-wide facts (reused from the legacy pages).
 export const SITE = {
   name: 'Adharul Imron',
-  title: 'Data Analyst',
+  title: 'Full Stack Developer',
   url: 'https://i-adharul.github.io',
-  description: 'A Data Analyst with experience in Growth and Product Marketing.',
+  description: 'Data analytics case studies by Adharul Imron, a full stack developer with a background in data analytics, growth, and product.',
   email: 'i.adharul@gmail.com',
   linkedin: 'https://www.linkedin.com/in/adharul-imron',
   github: 'https://github.com/i-adharul',
+  devPortfolio: 'https://www.adharul.my.id',
 } as const;
 
 export const NAV = [
