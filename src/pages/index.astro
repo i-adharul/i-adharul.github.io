@@ -22,7 +22,7 @@ const wrap = 'mx-auto max-w-page px-4 md:px-8 lg:px-12';
         <h1 class="t-display mt-4">{hero.title}</h1>
         <p class="t-body-lg mt-4 font-medium">{hero.subtitle}</p>
         <div class="mt-6 max-w-prose space-y-4 text-muted">
-          {hero.paragraphs.map((p) => <p>{p}</p>)}
+          {hero.paragraphs.map((p) => <p set:html={p} />)}
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href={SITE.devPortfolio} external>See my dev portfolio</Button>

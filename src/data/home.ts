@@ -1,13 +1,13 @@
 // Home-page content (hero, skills, contact). Project cards come from the content collection.
 
 export const hero = {
-  tagline: 'In God we trust. All others must bring data.',
+  tagline: 'Data analytics case studies',
   title: "Hi, I'm Imron",
   subtitle: 'A Full Stack Developer with a background in data analytics, growth, and product marketing',
   paragraphs: [
-    'Before moving into software, I worked in data analytics, growth, and product roles. I released 20+ product campaigns and analyzed user fraud in a promotional program to successfully secure tens of millions of rupiah marketing budget.',
-    'I then trained as a full stack developer at Hacktiv8 (Fullstack JavaScript Immersive, Honors) and now build web apps with React, Node.js, Express, and PostgreSQL. I care about the parts users never see: data that stays correct, isolated per company, and safe to retry.',
-    'This site keeps my data analytics case studies. My software projects are on my developer portfolio at adharul.my.id.',
+    'This site holds my data analytics case studies from before I moved into software. For my full stack projects, visit my developer portfolio at <a href="https://www.adharul.my.id" class="font-medium text-accent underline underline-offset-2">adharul.my.id</a>.',
+    'Before moving into software, I worked in data analytics, growth, and product roles. I released 20+ product campaigns and analyzed user fraud in a promotional program to secure tens of millions of rupiah in marketing budget.',
+    'I then trained as a full stack developer at Hacktiv8 (Fullstack JavaScript Immersive, Honors) and now build web apps with React, Node.js, Express, and PostgreSQL.',
   ],
 };
 
